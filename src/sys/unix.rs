@@ -825,6 +825,17 @@ fn copy_and_pad_with_spaces(src: &str, target: &mut [libc::c_char; 8]) -> io::Re
     Ok(())
 }
 
+// CENTRIFUGE: `view_as` without its generic result, see log/NOTES.md.
+#[cfg(all(
+    feature = "all",
+    any(target_arch = "x86_64", target_arch = "s390x"),
+    target_env = "gnu"
+))]
+fn view_as_iucv(storage: &mut SockAddrStorage) -> &mut libc::sockaddr_iucv {
+    // SAFETY: sockaddr_iucv is one of the sockaddr_* types defined by this platform.
+    unsafe { storage.view_as::<libc::sockaddr_iucv>() }
+}
+
 #[cfg(all(
     feature = "all",
     any(target_arch = "x86_64", target_arch = "s390x"),
@@ -833,8 +844,7 @@ fn copy_and_pad_with_spaces(src: &str, target: &mut [libc::c_char; 8]) -> io::Re
 pub(crate) fn iucv_sockaddr(userid: &str, name: &str) -> io::Result<SockAddr> {
     let mut storage = SockAddrStorage::zeroed();
     {
-        // SAFETY: sockaddr_iucv is one of the sockaddr_* types defined by this platform.
-        let storage = unsafe { storage.view_as::<libc::sockaddr_iucv>() };
+        let storage = view_as_iucv(&mut storage);
 
         storage.siucv_family = libc::AF_IUCV as sa_family_t;
         // Note that storage.siucv_port is initialized to zero above, which is required for the reserved field
@@ -1010,6 +1020,7 @@ impl SockAddr {
     ///
     /// Abstract addresses are a Linux extension, so this method returns `None` on all non-Linux
     /// platforms.
+    #[flux_rs::trusted(reason = "ABORT: `len` can't be tied to the family, nor the `then` guard to its closure (ABORT.md §3)")]
     pub fn as_abstract_namespace(&self) -> Option<&[u8]> {
         // NOTE: although Fuchsia does define `AF_UNIX` it's not actually implemented.
         // See https://github.com/rust-lang/socket2/pull/403#discussion_r1123557978
@@ -2029,6 +2040,7 @@ impl crate::Socket {
         feature = "all",
         any(target_os = "android", target_os = "fuchsia", target_os = "linux")
     ))]
+    #[flux_rs::trusted(reason = "ABORT: flux-core's `assume_init` rejects an uninitialised `[MaybeUninit<u8>; N]` (ABORT.md §6)")]
     pub fn device(&self) -> io::Result<Option<Vec<u8>>> {
         // TODO: replace with `MaybeUninit::uninit_array` once stable.
         let mut buf: [MaybeUninit<u8>; libc::IFNAMSIZ] =
@@ -3103,8 +3115,11 @@ impl std::fmt::Debug for SockFilter {
 /// [`Socket::dccp_available_ccids`]: crate::Socket::dccp_available_ccids
 #[cfg(all(feature = "all", target_os = "linux"))]
 #[derive(Debug)]
+#[flux_rs::refined_by(length: int)]
+#[flux_rs::invariant(length <= N)]
 pub struct CcidEndpoints<const N: usize> {
     endpoints: [u8; N],
+    #[field(u32[length])]
     length: u32,
 }
 

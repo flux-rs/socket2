@@ -7,6 +7,9 @@ flux_rs::defs! {
         p.addr != 0 && p.base <= p.addr && n <= p.size
     }
 
+    // A buffer passed to a system call: null is fine for an empty one.
+    fn ffi_buf(p: ptr, n: int) -> bool { n == 0 || readable(p, n) }
+
     // Bytes in a `sockaddr_storage`, which every address has to fit in.
     fn storage_size() -> int { <crate::sys::sockaddr_storage as Sized>::size_of() }
 
@@ -123,7 +126,7 @@ unsafe fn getpeername(socket: libc::c_int, address: *mut libc::sockaddr, address
 
 #[flux_rs::extern_spec(libc)]
 #[flux_rs::spec(fn(libc::c_int, libc::c_int, libc::c_int, *const[@p] c_void, l: u32) -> libc::c_int
-                requires readable(p, l))]
+                requires ffi_buf(p, l))]
 unsafe fn setsockopt(
     socket: libc::c_int,
     level: libc::c_int,
