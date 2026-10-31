@@ -85,6 +85,11 @@ All are behaviour-preserving and marked `CENTRIFUGE`:
 
 ## Setup
 
+- `run_flux.py --make-targets` needs `-Fdump-call-graph`, which upstream `bd5de27` doesn't have: it
+  came from the local flux branch `kris-gaudel/auto-strong-callgraph`. So `log/*graph.json` date from
+  the old driver, and `flux_canary.py` on Linux lists macOS-only fns from that stale graph as silent
+  (`set_nosigpipe`, `_set_nosigpipe`, `_sendfile`, `set_common_accept_flags`).
+
 - `flux_thaw.py` mustn't be run directly from a crate: it looks for `.git` in the crate dir, so it
   would `git init` there, and its `git add -A` staged everything untracked in the repo. It was run
   through a wrapper scoping both to the crate. Commits here were likewise made without `checkpoint.sh`.
