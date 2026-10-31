@@ -61,6 +61,8 @@
 #![doc(test(attr(deny(warnings))))]
 // CENTRIFUGE: flux injects `#![feature(custom_inner_attributes)]`.
 #![cfg_attr(flux, allow(unused_features))]
+// CENTRIFUGE: Check `+`, `*` etc. too, not just unsigned `-`.
+#![cfg_attr(flux, flux::opts(check_overflow = "strict"))]
 
 use std::fmt;
 #[cfg(not(any(target_os = "redox", target_os = "wasi", target_os = "horizon")))]

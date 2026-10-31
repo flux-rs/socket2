@@ -1314,6 +1314,7 @@ pub(crate) fn timeout_opt(fd: RawSocket, opt: c_int, val: c_int) -> io::Result<O
     unsafe { getsockopt(fd, opt, val).map(from_timeval) }
 }
 
+#[flux_rs::trusted(reason = "ABORT: `tv_usec < 1000000` is the kernel's to promise, read through `getsockopt` (ABORT.md §5)")]
 const fn from_timeval(duration: libc::timeval) -> Option<Duration> {
     if duration.tv_sec == 0 && duration.tv_usec == 0 {
         None
