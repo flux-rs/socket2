@@ -2469,6 +2469,7 @@ impl Read for Socket {
     }
 }
 
+#[flux_rs::trusted_impl(reason = "ICE")]
 impl<'a> Read for &'a Socket {
     fn read(&mut self, buf: &mut [u8]) -> io::Result<usize> {
         // Safety: see other `Read::read` impl.
@@ -2477,6 +2478,7 @@ impl<'a> Read for &'a Socket {
     }
 
     #[cfg(not(any(target_os = "redox", target_os = "wasi", target_os = "horizon")))]
+    #[flux_rs::trusted(reason = "panicked at /cargo/registry/25cdd57fae9f0462/ena-0.14.4/src/snapshot_vec.rs:199:10")]
     fn read_vectored(&mut self, bufs: &mut [IoSliceMut<'_>]) -> io::Result<usize> {
         // Safety: see other `Read::read` impl.
         let bufs = unsafe { &mut *(bufs as *mut [IoSliceMut<'_>] as *mut [MaybeUninitSlice<'_>]) };
