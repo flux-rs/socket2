@@ -700,7 +700,10 @@ impl std::fmt::Debug for RecvFlags {
 }
 
 #[repr(transparent)]
+#[flux_rs::refined_by(base: ptr, len: int)]
+#[flux_rs::invariant(crate::flux_specs::readable(base, len * crate::flux_specs::mu8_size()))]
 pub struct MaybeUninitSlice<'a> {
+    #[field(libc::iovec[base, len])]
     vec: libc::iovec,
     _lifetime: PhantomData<&'a mut [MaybeUninit<u8>]>,
 }
@@ -710,6 +713,7 @@ unsafe impl<'a> Send for MaybeUninitSlice<'a> {}
 unsafe impl<'a> Sync for MaybeUninitSlice<'a> {}
 
 impl<'a> MaybeUninitSlice<'a> {
+    #[flux_rs::spec(fn(&mut [MaybeUninit<u8>][@n]) -> MaybeUninitSlice{v: v.len == n})]
     pub(crate) fn new(buf: &'a mut [MaybeUninit<u8>]) -> MaybeUninitSlice<'a> {
         MaybeUninitSlice {
             vec: libc::iovec {
@@ -720,10 +724,12 @@ impl<'a> MaybeUninitSlice<'a> {
         }
     }
 
+    #[flux_rs::spec(fn(&MaybeUninitSlice[@s]) -> &[MaybeUninit<u8>][s.len])]
     pub(crate) fn as_slice(&self) -> &[MaybeUninit<u8>] {
         unsafe { slice::from_raw_parts(self.vec.iov_base.cast(), self.vec.iov_len) }
     }
 
+    #[flux_rs::spec(fn(&mut MaybeUninitSlice[@s]) -> &mut [MaybeUninit<u8>][s.len])]
     pub(crate) fn as_mut_slice(&mut self) -> &mut [MaybeUninit<u8>] {
         unsafe { slice::from_raw_parts_mut(self.vec.iov_base.cast(), self.vec.iov_len) }
     }
@@ -731,6 +737,8 @@ impl<'a> MaybeUninitSlice<'a> {
 
 /// Returns the offset of the `sun_path` member of the passed unix socket address.
 #[cfg(not(target_os = "wasi"))]
+#[flux_rs::trusted(reason = "ABORT: a field's address has no relation to its struct's in flux (ABORT.md §1)")]
+#[flux_rs::spec(fn(&libc::sockaddr_un) -> usize[crate::flux_specs::sun_path_offset()])]
 pub(crate) fn offset_of_path(storage: &libc::sockaddr_un) -> usize {
     let base = storage as *const _ as usize;
     let path = ptr::addr_of!(storage.sun_path) as usize;
@@ -935,6 +943,8 @@ impl SockAddr {
     /// (for abstract names) null byte.
     ///
     /// Should not be called on unnamed addresses.
+    #[flux_rs::spec(fn(&SockAddr[@a], &libc::sockaddr_un) -> usize[a - crate::flux_specs::sun_path_offset() - 1]
+                    requires crate::flux_specs::sun_path_offset() < a)]
     fn path_len(&self, storage: &libc::sockaddr_un) -> usize {
         debug_assert!(!self.is_unnamed());
         self.len() as usize - offset_of_path(storage) - 1
@@ -943,6 +953,9 @@ impl SockAddr {
     /// Get a u8 slice for the bytes of the pathname or abstract name.
     ///
     /// Should not be called on unnamed addresses.
+    #[flux_rs::spec(fn(&SockAddr[@a], &libc::sockaddr_un, abstract_name: bool)
+                       -> &[u8][a - crate::flux_specs::sun_path_offset() - 1]
+                    requires crate::flux_specs::named_unix_len(a, abstract_name))]
     fn path_bytes(&self, storage: &libc::sockaddr_un, abstract_name: bool) -> &[u8] {
         debug_assert!(!self.is_unnamed());
         // SAFETY: the pointed objects of type `i8` have the same memory layout as `u8`. The path is
@@ -1179,7 +1192,7 @@ pub(crate) fn recv_from(
     }
 }
 
-#[flux_rs::trusted(reason = "panicked at crates/flux-middle/src/rty/expr.rs:606:17")]
+#[flux_rs::trusted(reason = "ICE: rty/expr.rs:606 field projection on an empty tuple, `[MaybeUninit::uninit(); 8]`")]
 pub(crate) fn peek_sender(fd: RawSocket) -> io::Result<SockAddr> {
     // Unix-like platforms simply truncate the returned data, so this implementation is trivial.
     // However, for Windows this requires suppressing the `WSAEMSGSIZE` error,

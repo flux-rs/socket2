@@ -422,7 +422,9 @@ impl RecvFlags {
 ///
 /// [`IoSliceMut`]: std::io::IoSliceMut
 #[repr(transparent)]
-pub struct MaybeUninitSlice<'a>(sys::MaybeUninitSlice<'a>);
+#[flux_rs::refined_by(base: ptr, len: int)]
+#[flux_rs::invariant(flux_specs::readable(base, len * flux_specs::mu8_size()))]
+pub struct MaybeUninitSlice<'a>(#[field(sys::MaybeUninitSlice[base, len])] sys::MaybeUninitSlice<'a>);
 
 impl<'a> fmt::Debug for MaybeUninitSlice<'a> {
     fn fmt(&self, fmt: &mut fmt::Formatter<'_>) -> fmt::Result {
@@ -436,6 +438,7 @@ impl<'a> MaybeUninitSlice<'a> {
     /// # Panics
     ///
     /// Panics on Windows if the slice is larger than 4GB.
+    #[flux_rs::spec(fn(&mut [MaybeUninit<u8>][@n]) -> MaybeUninitSlice{v: v.len == n})]
     pub fn new(buf: &'a mut [MaybeUninit<u8>]) -> MaybeUninitSlice<'a> {
         MaybeUninitSlice(sys::MaybeUninitSlice::new(buf))
     }
@@ -444,12 +447,14 @@ impl<'a> MaybeUninitSlice<'a> {
 impl<'a> Deref for MaybeUninitSlice<'a> {
     type Target = [MaybeUninit<u8>];
 
+    #[flux_rs::spec(fn(&MaybeUninitSlice[@s]) -> &[MaybeUninit<u8>][s.len])]
     fn deref(&self) -> &[MaybeUninit<u8>] {
         self.0.as_slice()
     }
 }
 
 impl<'a> DerefMut for MaybeUninitSlice<'a> {
+    #[flux_rs::spec(fn(&mut MaybeUninitSlice[@s]) -> &mut [MaybeUninit<u8>][s.len])]
     fn deref_mut(&mut self) -> &mut [MaybeUninit<u8>] {
         self.0.as_mut_slice()
     }

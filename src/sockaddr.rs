@@ -91,8 +91,11 @@ impl std::fmt::Debug for SockAddrStorage {
 /// `SockAddr`s may be constructed directly to and from the standard library
 /// [`SocketAddr`], [`SocketAddrV4`], and [`SocketAddrV6`] types.
 #[derive(Clone)]
+#[flux_rs::refined_by(len: int)]
+#[flux_rs::invariant(len <= crate::flux_specs::storage_size())]
 pub struct SockAddr {
     storage: sockaddr_storage,
+    #[field(socklen_t[len])]
     len: socklen_t,
 }
 
@@ -142,6 +145,7 @@ impl SockAddr {
     /// # Ok(())
     /// # }
     /// ```
+    #[flux_rs::spec(fn(SockAddrStorage, len: socklen_t{len <= crate::flux_specs::storage_size()}) -> SockAddr[len])]
     pub const unsafe fn new(storage: SockAddrStorage, len: socklen_t) -> SockAddr {
         SockAddr {
             storage: storage.storage,
@@ -242,6 +246,8 @@ impl SockAddr {
     ///
     /// Caller must ensure that the address up to `length` bytes are properly
     /// initialised.
+    #[flux_rs::spec(fn(self: &strg SockAddr, length: socklen_t{length <= crate::flux_specs::storage_size()})
+                    ensures self: SockAddr[length])]
     pub unsafe fn set_length(&mut self, length: socklen_t) {
         self.len = length;
     }
@@ -257,16 +263,19 @@ impl SockAddr {
     }
 
     /// Returns the size of this address in bytes.
+    #[flux_rs::spec(fn(&SockAddr[@a]) -> socklen_t[a])]
     pub const fn len(&self) -> socklen_t {
         self.len
     }
 
     /// Returns a raw pointer to the address.
+    #[flux_rs::spec(fn(&SockAddr) -> *const{p: crate::flux_specs::covers_storage(p)} SockAddrStorage)]
     pub const fn as_ptr(&self) -> *const SockAddrStorage {
         &self.storage as *const sockaddr_storage as *const SockAddrStorage
     }
 
     /// Returns a raw mutable pointer to the address.
+    #[flux_rs::spec(fn(&mut SockAddr) -> *mut{p: crate::flux_specs::covers_storage(p)} SockAddrStorage)]
     pub fn as_mut_ptr(&mut self) -> *mut SockAddrStorage {
         &mut self.storage as *mut sockaddr_storage as *mut SockAddrStorage
     }
