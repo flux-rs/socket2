@@ -1,8 +1,8 @@
 # Flux issues from socket2
 
 Repros: `log/flux-repros/`, each confirmed standalone on both the old driver, `6c6bdf4a00`
-(2026-10-18), upstream HEAD, `bd5de27` (2026-10-29), and the local branch rebased onto it, `da3a598c44`. Issue text was searched over the 200
-most recent issues and PRs, #1690 up: older ones weren't, the download failed past that.
+(2026-10-18), upstream HEAD, `bd5de27` (2026-10-29), and the local branch rebased onto it, `da3a598c44`. Issue titles and bodies were searched
+for #885 to #1898: GitHub's API wouldn't page further back.
 
 | # | repro | symptom | upstream |
 |---|---|---|---|
