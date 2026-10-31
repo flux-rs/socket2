@@ -231,6 +231,9 @@ impl SockAddr {
         let mut storage = SockAddrStorage::zeroed();
         let mut len = STORAGE_SIZE;
         init(&mut storage, &mut len).map(|res| {
+            // CENTRIFUGE: flux keeps `len`'s old value through the `*mut`, see `kernel_len`.
+            #[cfg(unix)]
+            let len = crate::sys::kernel_len(len, STORAGE_SIZE);
             debug_assert!(len <= STORAGE_SIZE, "overflown address storage");
             (res, SockAddr::new(storage, len))
         })

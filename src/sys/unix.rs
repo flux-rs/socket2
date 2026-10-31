@@ -861,6 +861,7 @@ pub(crate) fn iucv_sockaddr(userid: &str, name: &str) -> io::Result<SockAddr> {
 pub(crate) use libc::msghdr;
 
 #[cfg(not(any(target_os = "redox", target_os = "wasi", target_os = "horizon")))]
+#[flux_rs::spec(fn(&mut msghdr, name: *mut[@p] SockAddrStorage, name_len: u32{crate::flux_specs::readable(p, name_len)}))]
 pub(crate) fn set_msghdr_name(msg: &mut msghdr, name: *mut SockAddrStorage, name_len: socklen_t) {
     msg.msg_name = name as *mut _;
     msg.msg_namelen = name_len;
@@ -868,12 +869,14 @@ pub(crate) fn set_msghdr_name(msg: &mut msghdr, name: *mut SockAddrStorage, name
 
 #[cfg(not(any(target_os = "redox", target_os = "wasi", target_os = "horizon")))]
 #[allow(clippy::unnecessary_cast)] // IovLen type can be `usize`.
+#[flux_rs::spec(fn(&mut msghdr, ptr: *mut[@p] libc::iovec, len: usize{crate::flux_specs::readable(p, len * <libc::iovec as Sized>::size_of())}))]
 pub(crate) fn set_msghdr_iov(msg: &mut msghdr, ptr: *mut libc::iovec, len: usize) {
     msg.msg_iov = ptr;
     msg.msg_iovlen = min(len, IovLen::MAX as usize) as IovLen;
 }
 
 #[cfg(not(any(target_os = "redox", target_os = "wasi", target_os = "horizon")))]
+#[flux_rs::spec(fn(&mut msghdr, ptr: *mut[@p] libc::c_void, len: usize{crate::flux_specs::readable(p, len)}))]
 pub(crate) fn set_msghdr_control(msg: &mut msghdr, ptr: *mut libc::c_void, len: usize) {
     msg.msg_control = ptr;
     msg.msg_controllen = len as _;
@@ -1233,13 +1236,13 @@ pub(crate) fn recv_from(
     }
 }
 
-#[flux_rs::trusted(reason = "ICE: rty/expr.rs:606, `[MaybeUninit::uninit(); 8]` (FLUX_ISSUES.md 2)")]
 pub(crate) fn peek_sender(fd: RawSocket) -> io::Result<SockAddr> {
     // Unix-like platforms simply truncate the returned data, so this implementation is trivial.
     // However, for Windows this requires suppressing the `WSAEMSGSIZE` error,
     // so that requires a different approach.
     // NOTE: macOS does not populate `sockaddr` if you pass a zero-sized buffer.
-    let (_, sender) = recv_from(fd, &mut [MaybeUninit::uninit(); 8], MSG_PEEK)?;
+    // CENTRIFUGE: `new(0)`, as `[MaybeUninit::uninit(); 8]` crashes flux (FLUX_ISSUES.md 2).
+    let (_, sender) = recv_from(fd, &mut [MaybeUninit::new(0); 8], MSG_PEEK)?;
     Ok(sender)
 }
 
@@ -1343,13 +1346,19 @@ pub(crate) fn timeout_opt(fd: RawSocket, opt: c_int, val: c_int) -> io::Result<O
     unsafe { getsockopt(fd, opt, val).map(from_timeval) }
 }
 
+// CENTRIFUGE: the kernel's `timeval`s are normalised.
 #[flux_rs::trusted(reason = "ABORT: `tv_usec < 1000000` is the kernel's to promise, read through `getsockopt` (ABORT.md §5)")]
+#[flux_rs::spec(fn(usec: libc::suseconds_t) -> u32{v: v <= 999999})]
+const fn kernel_usec(usec: libc::suseconds_t) -> u32 {
+    usec as u32
+}
+
 const fn from_timeval(duration: libc::timeval) -> Option<Duration> {
     if duration.tv_sec == 0 && duration.tv_usec == 0 {
         None
     } else {
         let sec = duration.tv_sec as u64;
-        let nsec = (duration.tv_usec as u32) * 1000;
+        let nsec = kernel_usec(duration.tv_usec) * 1000;
         Some(Duration::new(sec, nsec))
     }
 }
@@ -1488,20 +1497,40 @@ fn fcntl_remove(fd: RawSocket, get_cmd: c_int, set_cmd: c_int, flag: c_int) -> i
     }
 }
 
+// CENTRIFUGE: `getsockopt(2)` with its in-out length split in two. Through a `*mut socklen_t`
+// flux keeps a local's old value, flux-rs/flux FLUX_ISSUES.md 5, so that callers proved
+// facts of the length from before the call.
+#[flux_rs::spec(fn(RawSocket, c_int, c_int, buf: *mut[@p] libc::c_void, u32[@cap])
+                -> Result<u32{v: v <= cap}, io::Error>
+                requires crate::flux_specs::ffi_buf(p, cap))]
+unsafe fn getsockopt_into(
+    fd: RawSocket,
+    opt: c_int,
+    val: c_int,
+    buf: *mut libc::c_void,
+    cap: libc::socklen_t,
+) -> io::Result<libc::socklen_t> {
+    let mut len = cap;
+    syscall!(getsockopt(fd, opt, val, buf, &mut len)).map(|_| kernel_len(len, cap))
+}
+
+// CENTRIFUGE: what the kernel promises of a returned length. It also forgets `len`'s old value.
+#[flux_rs::trusted(reason = "ABORT: the kernel writes at most the capacity it's given (ABORT.md §7)")]
+#[flux_rs::spec(fn(len: u32, cap: u32) -> u32{v: v <= cap})]
+pub(crate) fn kernel_len(len: libc::socklen_t, cap: libc::socklen_t) -> libc::socklen_t {
+    debug_assert!(len <= cap);
+    len
+}
+
 /// Caller must ensure `T` is the correct type for `opt` and `val`.
+#[flux_rs::spec(fn(RawSocket, c_int, c_int) -> io::Result<T>
+                requires <MaybeUninit<T> as Sized>::size_of() <= 4294967295)]
 pub(crate) unsafe fn getsockopt<T>(fd: RawSocket, opt: c_int, val: c_int) -> io::Result<T> {
     let mut payload: MaybeUninit<T> = MaybeUninit::uninit();
     // CENTRIFUGE: outside the closure, flux's no-panic check rejects it in one.
-    let size = size_of::<T>();
-    let mut len = size as libc::socklen_t;
-    syscall!(getsockopt(
-        fd,
-        opt,
-        val,
-        payload.as_mut_ptr().cast(),
-        &mut len,
-    ))
-    .map(|_| {
+    let size = size_of::<MaybeUninit<T>>();
+    getsockopt_into(fd, opt, val, ptr::addr_of_mut!(payload).cast(), size as libc::socklen_t)
+    .map(|len| {
         debug_assert_eq!(len as usize, size);
         // Safety: `getsockopt` initialised `payload` for us.
         payload.assume_init()
@@ -1623,17 +1652,6 @@ pub(crate) fn original_dst_v6(fd: RawSocket) -> io::Result<SockAddr> {
         })
     }
     .map(|(_, addr)| addr)
-}
-
-// CENTRIFUGE: `device`'s buffer, split out so the rest of it stays checked.
-#[cfg(all(
-    feature = "all",
-    any(target_os = "android", target_os = "fuchsia", target_os = "linux")
-))]
-#[flux_rs::trusted(reason = "ABORT: flux-core's `assume_init` rejects an uninitialised `[MaybeUninit<u8>; N]` (ABORT.md §6)")]
-fn uninit_ifname() -> [MaybeUninit<u8>; libc::IFNAMSIZ] {
-    // TODO: replace with `MaybeUninit::uninit_array` once stable.
-    unsafe { MaybeUninit::uninit().assume_init() }
 }
 
 /// Unix only API.
@@ -2071,15 +2089,18 @@ impl crate::Socket {
         any(target_os = "android", target_os = "fuchsia", target_os = "linux")
     ))]
     pub fn device(&self) -> io::Result<Option<Vec<u8>>> {
-        let mut buf = uninit_ifname();
-        let mut len = buf.len() as libc::socklen_t;
-        syscall!(getsockopt(
-            self.as_raw(),
-            libc::SOL_SOCKET,
-            libc::SO_BINDTODEVICE,
-            buf.as_mut_ptr().cast(),
-            &mut len,
-        ))?;
+        // CENTRIFUGE: `new(0)`, as an uninitialised array crashes flux (FLUX_ISSUES.md 2).
+        let mut buf = [MaybeUninit::<u8>::new(0); libc::IFNAMSIZ];
+        let cap = buf.len() as libc::socklen_t;
+        let len = unsafe {
+            getsockopt_into(
+                self.as_raw(),
+                libc::SOL_SOCKET,
+                libc::SO_BINDTODEVICE,
+                buf.as_mut_ptr().cast(),
+                cap,
+            )?
+        };
         if len == 0 {
             Ok(None)
         } else {
@@ -2835,15 +2856,17 @@ impl crate::Socket {
     #[cfg(all(feature = "all", any(target_os = "freebsd", target_os = "linux")))]
     pub fn tcp_congestion(&self) -> io::Result<Vec<u8>> {
         let mut payload: [u8; TCP_CA_NAME_MAX] = [0; TCP_CA_NAME_MAX];
-        let mut len = payload.len() as libc::socklen_t;
-        syscall!(getsockopt(
-            self.as_raw(),
-            IPPROTO_TCP,
-            libc::TCP_CONGESTION,
-            payload.as_mut_ptr().cast(),
-            &mut len,
-        ))
-        .map(|_| payload[..len as usize].to_vec())
+        let cap = payload.len() as libc::socklen_t;
+        unsafe {
+            getsockopt_into(
+                self.as_raw(),
+                IPPROTO_TCP,
+                libc::TCP_CONGESTION,
+                payload.as_mut_ptr().cast(),
+                cap,
+            )
+        }
+        .map(|len| payload[..len as usize].to_vec())
     }
 
     /// Set the value of the `TCP_CONGESTION` option for this socket.
@@ -3056,14 +3079,16 @@ impl crate::Socket {
     #[cfg(all(feature = "all", target_os = "linux"))]
     pub fn dccp_available_ccids<const N: usize>(&self) -> io::Result<CcidEndpoints<N>> {
         let mut endpoints = [0; N];
-        let mut length = endpoints.len() as libc::socklen_t;
-        syscall!(getsockopt(
-            self.as_raw(),
-            libc::SOL_DCCP,
-            libc::DCCP_SOCKOPT_AVAILABLE_CCIDS,
-            endpoints.as_mut_ptr().cast(),
-            &mut length,
-        ))?;
+        let cap = endpoints.len() as libc::socklen_t;
+        let length = unsafe {
+            getsockopt_into(
+                self.as_raw(),
+                libc::SOL_DCCP,
+                libc::DCCP_SOCKOPT_AVAILABLE_CCIDS,
+                endpoints.as_mut_ptr().cast(),
+                cap,
+            )?
+        };
         Ok(CcidEndpoints { endpoints, length })
     }
 

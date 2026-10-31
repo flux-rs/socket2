@@ -2457,13 +2457,16 @@ impl Read for Socket {
     }
 
     #[cfg(not(any(target_os = "redox", target_os = "wasi", target_os = "horizon")))]
-    #[flux_rs::trusted(reason = "ICE: ena snapshot_vec.rs:199, `is_sized` on a type with regions in `raw_ptr_with_size` (flux#1828)")]
     fn read_vectored(&mut self, bufs: &mut [IoSliceMut<'_>]) -> io::Result<usize> {
         // Safety: both `IoSliceMut` and `MaybeUninitSlice` promise to have the
         // same layout, that of `iovec`/`WSABUF`. Furthermore, `recv_vectored`
         // promises to not write uninitialised bytes to the `bufs` and pass it
         // directly to the `recvmsg` system call, so this is safe.
-        let bufs = unsafe { &mut *(bufs as *mut [IoSliceMut<'_>] as *mut [MaybeUninitSlice<'_>]) };
+        // CENTRIFUGE: `from_raw_parts_mut`, not a slice pointer cast, which is flux-rs/flux#1828.
+        let len = bufs.len();
+        let bufs = unsafe {
+            std::slice::from_raw_parts_mut(bufs.as_mut_ptr().cast::<MaybeUninitSlice<'_>>(), len)
+        };
         self.recv_vectored(bufs).map(|(n, _)| n)
     }
 }
@@ -2476,10 +2479,13 @@ impl<'a> Read for &'a Socket {
     }
 
     #[cfg(not(any(target_os = "redox", target_os = "wasi", target_os = "horizon")))]
-    #[flux_rs::trusted(reason = "ICE: ena snapshot_vec.rs:199, `is_sized` on a type with regions in `raw_ptr_with_size` (flux#1828)")]
     fn read_vectored(&mut self, bufs: &mut [IoSliceMut<'_>]) -> io::Result<usize> {
         // Safety: see other `Read::read` impl.
-        let bufs = unsafe { &mut *(bufs as *mut [IoSliceMut<'_>] as *mut [MaybeUninitSlice<'_>]) };
+        // CENTRIFUGE: `from_raw_parts_mut`, not a slice pointer cast, which is flux-rs/flux#1828.
+        let len = bufs.len();
+        let bufs = unsafe {
+            std::slice::from_raw_parts_mut(bufs.as_mut_ptr().cast::<MaybeUninitSlice<'_>>(), len)
+        };
         self.recv_vectored(bufs).map(|(n, _)| n)
     }
 }
