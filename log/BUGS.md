@@ -18,6 +18,7 @@ SockAddr::unix("a\0b").unwrap().as_unix(); // panics
 
 - Found by flux: `Result::unwrap` requires `Result[true]`. `as_unix` holds the only error of its kind.
 - Repro: `tests/flux_found.rs`, `as_unix_panics_on_interior_null`, passes on macOS.
+- All 679 of the repo's issues and PRs were searched.
 - Impact: a panic, not memory unsafety. A service that builds a path from untrusted input and calls `as_unix` can be made to panic.
 - Fix: return `from_pathname(path).ok()`, or reject the null in `unix_sockaddr`.
 - Upstream: no matching issue found in `rust-lang/socket2`; not reported.

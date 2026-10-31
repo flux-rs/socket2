@@ -4,12 +4,13 @@ Every entry is a `#[flux_rs::trusted(reason = "ABORT: …")]` on a small helper,
 
 | § | category | fn | status |
 |---|---|---|---|
-| 1 | flux can't relate addresses | `offset_of_path` | ABORT |
+| 1 | flux can't relate addresses | `offset_of_path`, both backends | ABORT |
 | 2 | `nonoverlapping` across allocations | `copy_path` | ABORT |
 | 3 | fact about runtime data | `assume_unix_len` | ABORT |
 | 4 | flux false positive | `getsockopt` | DONE, not trusted |
-| 5 | fact about the kernel | `from_timeval` | ABORT |
-| 6 | flux-core spec too strong | `uninit_ifname` (Linux only) | ABORT |
+| 5 | fact about the kernel | `kernel_usec` | ABORT |
+| 6 | flux-core spec too strong | `uninit_ifname` | DONE, removed |
+| 7 | fact about the kernel | `kernel_len`, both backends | ABORT |
 
 ## §1 `sys::offset_of_path` (src/sys/unix.rs)
 
@@ -45,20 +46,26 @@ Every entry is a `#[flux_rs::trusted(reason = "ABORT: …")]` on a small helper,
 
 ## §4 `sys::getsockopt` — DONE
 
-- Error: `call to core::mem::size_of may panic: MightPanic(NotInCallGraph)` at the
-  `debug_assert_eq!` in the `.map` closure.
-- Fixed by moving `size_of::<T>()` out of the closure. See `FLUX_ISSUES.md` 3.
+- Error: `call to core::mem::size_of may panic: MightPanic(NotInCallGraph)` in a `debug_assert_eq!`.
+- Fixed by binding `size_of` to a local first. It's about `assert_eq!`, not closures. See `FLUX_ISSUES.md` 3.
 
-## §5 `sys::from_timeval` (src/sys/unix.rs)
+## §5 `sys::kernel_usec` (src/sys/unix.rs)
 
-- Error: `arithmetic operation may overflow` on `(tv_usec as u32) * 1000`.
-- Cause: true only if `tv_usec < 1_000_000`, which comes from `getsockopt` through a raw pointer.
-- Tried: precondition (`timeout_opt`'s `.map(from_timeval)` has nothing to discharge it with: libc
-  `getsockopt`'s out-value can't be specified); refining `timeval` (same reason).
-- Not a bug unless the kernel misbehaves. Overflow is a panic in debug and wraps in release.
+- Error: `arithmetic operation may overflow` on `(tv_usec as u32) * 1000`, in `from_timeval`.
+- Cause: true only if `tv_usec < 1_000_000`, which the kernel supplies through `getsockopt`.
+- Tried: a precondition, which `timeout_opt`'s `.map(from_timeval)` can't discharge, nor a refined `timeval`.
+- Assumed: `kernel_usec` is the cast, and `<= 999999`, so `from_timeval` itself is checked.
+- Not a bug unless the kernel misbehaves. A `const fn`, so it has no runtime check.
 
-## §6 `sys::uninit_ifname` (src/sys/unix.rs, Linux only)
+## §6 `uninit_ifname` — DONE
 
-- Error: `a precondition cannot be proved`, `MaybeUninit<T>[true]` at `MaybeUninit::uninit().assume_init()`.
-- Cause: flux-core's `assume_init` requires `init`, but an uninitialised `[MaybeUninit<u8>; N]` is fine.
-- Tried: `[MaybeUninit::uninit(); N]` would be correct and hits the ICE in `FLUX_ISSUES.md` 2.
+- `MaybeUninit::uninit().assume_init()`, which flux-core's `assume_init` rejects. `device` now uses
+  `[MaybeUninit::new(0); IFNAMSIZ]`, at the cost of zeroing 16 bytes.
+
+## §7 `sys::kernel_len` (src/sys/unix.rs, src/sys/windows.rs)
+
+- Cause: `getsockopt`, and the `init` of `try_init`, return a length through a `*mut socklen_t`, which flux
+  can't follow: worse, it keeps the old value, `FLUX_ISSUES.md` 4.
+- Assumed: the result is at most the capacity. Checked by a `debug_assert!`, as `try_init` already did.
+- `man getsockname` says a truncated address can report more than the capacity. `sockaddr_storage` is large
+  enough for what's in use, so this isn't seen in practice. A `debug_assert!`, so a release build doesn't check it.
