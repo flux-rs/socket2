@@ -1233,7 +1233,7 @@ pub(crate) fn recv_from(
     }
 }
 
-#[flux_rs::trusted(reason = "ICE: rty/expr.rs:606 field projection on an empty tuple, `[MaybeUninit::uninit(); 8]`")]
+#[flux_rs::trusted(reason = "ICE: rty/expr.rs:606, `[MaybeUninit::uninit(); 8]` (FLUX_ISSUES.md 2)")]
 pub(crate) fn peek_sender(fd: RawSocket) -> io::Result<SockAddr> {
     // Unix-like platforms simply truncate the returned data, so this implementation is trivial.
     // However, for Windows this requires suppressing the `WSAEMSGSIZE` error,

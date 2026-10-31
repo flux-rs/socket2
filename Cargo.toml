@@ -28,9 +28,9 @@ include       = [
 
 # CENTRIFUGE: flux specs
 [dependencies]
-flux-rs = { git = "https://github.com/flux-rs/flux", rev = "2cacd2ea00fdd96b4191a2e4df035ddbd51f78ee" }
-flux-core = { git = "https://github.com/flux-rs/flux", rev = "2cacd2ea00fdd96b4191a2e4df035ddbd51f78ee" }
-flux-alloc = { git = "https://github.com/flux-rs/flux", rev = "2cacd2ea00fdd96b4191a2e4df035ddbd51f78ee" }
+flux-rs = { git = "https://github.com/flux-rs/flux", rev = "bd5de273235457a5922280cc180c4a6a2990418a" }
+flux-core = { git = "https://github.com/flux-rs/flux", rev = "bd5de273235457a5922280cc180c4a6a2990418a" }
+flux-alloc = { git = "https://github.com/flux-rs/flux", rev = "bd5de273235457a5922280cc180c4a6a2990418a" }
 
 [dev-dependencies]
 libc = "0.2.190"

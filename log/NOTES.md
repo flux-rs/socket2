@@ -6,7 +6,8 @@ checked. See also `ABORT.md`, `BUGS.md`, `FLUX_ISSUES.md`, `TO_FILE.md`.
 
 ## Score (2026-10-30)
 
-Driver: installed `6c6bdf4a00` (2026-10-18), libs `2cacd2e`. `cargo flux` is clean on both:
+Driver and libs: upstream `bd5de27` (2026-10-29), nightly-2026-10-22. The same scores held on
+`6c6bdf4a00` (2026-10-18). `cargo flux` is clean on both:
 
 | target | processed | checked | trusted | ICE | ABORT | BUG |
 |---|---:|---:|---:|---:|---:|---:|
@@ -41,7 +42,7 @@ To run the harness on Linux: `CARGO_BUILD_TARGET=x86_64-unknown-linux-gnu python
 - libc `getsockopt`: its length is behind a pointer, which an extern spec can't constrain.
 - Windows `MaybeUninitSlice`: the `#[field]` in `lib.rs` wouldn't resolve under flux there.
 
-## `checked` overstates what this driver checks
+## `checked` overstates what flux checks
 
 Three things make a SAFE weaker than it looks. Each has a repro in `log/flux-repros/`.
 
@@ -49,7 +50,7 @@ Three things make a SAFE weaker than it looks. Each has a repro in `log/flux-rep
 signature's result gets a kvar nothing constrains, which is solved to `false`. Everything after
 binding it is silently dead: `proves_anything` there verifies `-> i32[1]` returning 2. In socket2
 that hit `view_as`, `mem::zeroed`, `ptr.cast::<T>()` then a deref, and `getsockopt::<T>()?`.
-This is flux-rs/flux#1841, fixed on 2026-10-19, one day after this driver.
+This is flux-rs/flux#907. #1841 tried to fix it and was closed unmerged. #1856 is open, and HEAD still behaves this way.
 
 **Stale locals (`d_rawwrite.rs`).** `&mut x` coerced to a raw pointer doesn't havoc `x`. So these
 hold only because flux thinks the kernel didn't write `len`, not because anything checks it:
@@ -77,7 +78,7 @@ The audit doesn't cover expression-bodied closures, macro-generated fns, or test
 All are behaviour-preserving and marked `CENTRIFUGE`:
 
 - `view_in`, `view_in6`, `view_in_mut`, `view_in6_mut`, `view_as_un`, `view_as_iucv`, `view_as_vm`, and
-  `SockAddrStorage::zeroed().storage` in the `From` impls: monomorphic, for #1841. Revert once on a fixed driver.
+  `SockAddrStorage::zeroed().storage` in the `From` impls: monomorphic, for #1856. Revert once that lands.
 - `bool::then` to `if` in `as_pathname`, `as_abstract_namespace`: flux can't carry the guard into the closure.
 - `size_of::<T>()` out of `getsockopt`'s closure: `FLUX_ISSUES.md` 3.
 - `copy_path`, `uninit_ifname`, `assume_unix_len`: one assumption each, so the callers stay checked.
@@ -88,5 +89,7 @@ All are behaviour-preserving and marked `CENTRIFUGE`:
   would `git init` there, and its `git add -A` staged everything untracked in the repo. It was run
   through a wrapper scoping both to the crate. Commits here were likewise made without `checkpoint.sh`.
 - `.cargo/config.toml` is local and excluded: the sandbox forbids flux's temp file next to the libs
-  in `~/.cargo/git`, so they are copied under `target/` and patched in. Not needed outside the sandbox.
+  in `~/.cargo/git`, so a local copy of flux is patched in. Not needed outside the sandbox.
+- `run_flux.py` used to say SAFE when `cargo flux` failed before running anything: now ERROR. Its
+  `detect_result` still ignores the exit code otherwise, so check for a `summary.` line.
 - `#![cfg_attr(flux, allow(unused_features))]` and `#[allow(unused_extern_crates)]`: the crate denies `rust_2018_idioms`.

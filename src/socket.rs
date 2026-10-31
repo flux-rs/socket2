@@ -2457,7 +2457,7 @@ impl Read for Socket {
     }
 
     #[cfg(not(any(target_os = "redox", target_os = "wasi", target_os = "horizon")))]
-    #[flux_rs::trusted(reason = "ICE: ena snapshot_vec.rs:199 index out of bounds, slice-pointer cast through `IoSliceMut<'_>`")]
+    #[flux_rs::trusted(reason = "ICE: ena snapshot_vec.rs:199, `is_sized` on a type with regions in `raw_ptr_with_size` (flux#1828)")]
     fn read_vectored(&mut self, bufs: &mut [IoSliceMut<'_>]) -> io::Result<usize> {
         // Safety: both `IoSliceMut` and `MaybeUninitSlice` promise to have the
         // same layout, that of `iovec`/`WSABUF`. Furthermore, `recv_vectored`
@@ -2476,7 +2476,7 @@ impl<'a> Read for &'a Socket {
     }
 
     #[cfg(not(any(target_os = "redox", target_os = "wasi", target_os = "horizon")))]
-    #[flux_rs::trusted(reason = "ICE: ena snapshot_vec.rs:199 index out of bounds, slice-pointer cast through `IoSliceMut<'_>`")]
+    #[flux_rs::trusted(reason = "ICE: ena snapshot_vec.rs:199, `is_sized` on a type with regions in `raw_ptr_with_size` (flux#1828)")]
     fn read_vectored(&mut self, bufs: &mut [IoSliceMut<'_>]) -> io::Result<usize> {
         // Safety: see other `Read::read` impl.
         let bufs = unsafe { &mut *(bufs as *mut [IoSliceMut<'_>] as *mut [MaybeUninitSlice<'_>]) };
