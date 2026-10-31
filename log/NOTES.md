@@ -6,7 +6,8 @@ checked. See also `ABORT.md`, `BUGS.md`, `FLUX_ISSUES.md`, `TO_FILE.md`.
 
 ## Score (2026-10-30)
 
-Driver and libs: upstream `bd5de27` (2026-10-29), nightly-2026-10-22. The same scores held on
+Driver: `da3a598c44`, the local `kris-gaudel/auto-strong-callgraph` rebased onto upstream `bd5de27`
+(2026-10-29), nightly-2026-10-22. Libs: `bd5de27`. The same scores held on plain `bd5de27` and on
 `6c6bdf4a00` (2026-10-18). `cargo flux` is clean on both:
 
 | target | processed | checked | trusted | ICE | ABORT | BUG |
@@ -85,10 +86,7 @@ All are behaviour-preserving and marked `CENTRIFUGE`:
 
 ## Setup
 
-- `run_flux.py --make-targets` needs `-Fdump-call-graph`, which upstream `bd5de27` doesn't have: it
-  came from the local flux branch `kris-gaudel/auto-strong-callgraph`. So `log/*graph.json` date from
-  the old driver, and `flux_canary.py` on Linux lists macOS-only fns from that stale graph as silent
-  (`set_nosigpipe`, `_set_nosigpipe`, `_sendfile`, `set_common_accept_flags`).
+- `run_flux.py --make-targets` needs `-Fdump-call-graph`, which is only on the local flux branch, not upstream.
 
 - `flux_thaw.py` mustn't be run directly from a crate: it looks for `.git` in the crate dir, so it
   would `git init` there, and its `git add -A` staged everything untracked in the repo. It was run
