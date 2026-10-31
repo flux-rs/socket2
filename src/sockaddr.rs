@@ -110,7 +110,7 @@ fn view_in6_mut(storage: &mut sockaddr_storage) -> &mut sockaddr_in6 {
 /// [`SocketAddr`], [`SocketAddrV4`], and [`SocketAddrV6`] types.
 #[derive(Clone)]
 #[flux_rs::refined_by(len: int)]
-#[flux_rs::invariant(len <= crate::flux_specs::storage_size())]
+#[flux_rs::invariant(0 <= len && len <= crate::flux_specs::storage_size())]
 pub struct SockAddr {
     storage: sockaddr_storage,
     #[field(socklen_t[len])]
@@ -163,7 +163,7 @@ impl SockAddr {
     /// # Ok(())
     /// # }
     /// ```
-    #[flux_rs::spec(fn(SockAddrStorage, len: socklen_t{len <= crate::flux_specs::storage_size()}) -> SockAddr[len])]
+    #[flux_rs::spec(fn(SockAddrStorage, len: socklen_t{0 <= len && len <= crate::flux_specs::storage_size()}) -> SockAddr[len])]
     pub const unsafe fn new(storage: SockAddrStorage, len: socklen_t) -> SockAddr {
         SockAddr {
             storage: storage.storage,
@@ -216,8 +216,10 @@ impl SockAddr {
     /// # Ok(())
     /// # }
     /// ```
-    #[flux_rs::spec(fn(init: F) -> io::Result<(T, SockAddr)>
-                    where F: FnOnce(*mut{p: crate::flux_specs::covers_storage(p)} SockAddrStorage, *mut u32) -> Result<T, io::Error>)]
+    #[cfg_attr(unix, flux_rs::spec(fn(init: F) -> io::Result<(T, SockAddr)>
+                    where F: FnOnce(*mut{p: crate::flux_specs::covers_storage(p)} SockAddrStorage, *mut u32) -> Result<T, io::Error>))]
+    #[cfg_attr(windows, flux_rs::spec(fn(init: F) -> io::Result<(T, SockAddr)>
+                    where F: FnOnce(*mut{p: crate::flux_specs::covers_storage(p)} SockAddrStorage, *mut i32) -> Result<T, io::Error>))]
     pub unsafe fn try_init<F, T>(init: F) -> io::Result<(T, SockAddr)>
     where
         F: FnOnce(*mut SockAddrStorage, *mut socklen_t) -> io::Result<T>,
@@ -232,7 +234,6 @@ impl SockAddr {
         let mut len = STORAGE_SIZE;
         init(&mut storage, &mut len).map(|res| {
             // CENTRIFUGE: flux keeps `len`'s old value through the `*mut`, see `kernel_len`.
-            #[cfg(unix)]
             let len = crate::sys::kernel_len(len, STORAGE_SIZE);
             debug_assert!(len <= STORAGE_SIZE, "overflown address storage");
             (res, SockAddr::new(storage, len))
@@ -269,7 +270,7 @@ impl SockAddr {
     ///
     /// Caller must ensure that the address up to `length` bytes are properly
     /// initialised.
-    #[flux_rs::spec(fn(self: &strg SockAddr, length: socklen_t{length <= crate::flux_specs::storage_size()})
+    #[flux_rs::spec(fn(self: &strg SockAddr, length: socklen_t{0 <= length && length <= crate::flux_specs::storage_size()})
                     ensures self: SockAddr[length])]
     pub unsafe fn set_length(&mut self, length: socklen_t) {
         self.len = length;

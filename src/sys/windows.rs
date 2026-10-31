@@ -98,7 +98,9 @@ pub(crate) const SOL_SOCKET: c_int = windows_sys::Win32::Networking::WinSock::SO
 // See Bool for why.
 pub(crate) trait GetsockoptOutput: Sized {
     unsafe fn assume_init(uninit: MaybeUninit<Self>, size: c_int) -> Self {
-        debug_assert_eq!(size as usize, size_of::<Self>());
+        // CENTRIFUGE: outside `debug_assert_eq!`, flux's panic check rejects it there.
+        let expected = size_of::<Self>();
+        debug_assert_eq!(size as usize, expected);
         uninit.assume_init()
     }
 }
@@ -135,7 +137,9 @@ impl GetsockoptOutput for Bool {
             let value = unsafe { *uninit.as_ptr().cast::<u8>() } as c_int;
             Self { value }
         } else {
-            debug_assert_eq!(size as usize, size_of::<Self>());
+            // CENTRIFUGE: outside `debug_assert_eq!`, flux's panic check rejects it there.
+            let expected = size_of::<Self>();
+            debug_assert_eq!(size as usize, expected);
             // SAFETY: outside of debug, we assume the caller has correctly initialised the value
             unsafe { uninit.assume_init() }
         }
@@ -217,7 +221,10 @@ impl std::fmt::Debug for RecvFlags {
 }
 
 #[repr(transparent)]
+#[flux_rs::refined_by(base: ptr, len: int)]
+#[flux_rs::invariant(crate::flux_specs::readable(base, len * crate::flux_specs::mu8_size()))]
 pub struct MaybeUninitSlice<'a> {
+    #[field(WSABUF[len, base])]
     vec: WSABUF,
     _lifetime: PhantomData<&'a mut [MaybeUninit<u8>]>,
 }
@@ -227,6 +234,7 @@ unsafe impl<'a> Send for MaybeUninitSlice<'a> {}
 unsafe impl<'a> Sync for MaybeUninitSlice<'a> {}
 
 impl<'a> MaybeUninitSlice<'a> {
+    #[flux_rs::spec(fn(&mut [MaybeUninit<u8>][@n]) -> MaybeUninitSlice{v: v.len == n})]
     pub fn new(buf: &'a mut [MaybeUninit<u8>]) -> MaybeUninitSlice<'a> {
         assert!(buf.len() <= u32::MAX as usize);
         MaybeUninitSlice {
@@ -238,10 +246,12 @@ impl<'a> MaybeUninitSlice<'a> {
         }
     }
 
+    #[flux_rs::spec(fn(&MaybeUninitSlice[@s]) -> &[MaybeUninit<u8>][s.len])]
     pub fn as_slice(&self) -> &[MaybeUninit<u8>] {
         unsafe { slice::from_raw_parts(self.vec.buf.cast(), self.vec.len as usize) }
     }
 
+    #[flux_rs::spec(fn(&mut MaybeUninitSlice[@s]) -> &mut [MaybeUninit<u8>][s.len])]
     pub fn as_mut_slice(&mut self) -> &mut [MaybeUninit<u8>] {
         unsafe { slice::from_raw_parts_mut(self.vec.buf.cast(), self.vec.len as usize) }
     }
@@ -290,6 +300,14 @@ fn init() {
 
 pub(crate) type Socket = std::os::windows::io::OwnedSocket;
 pub(crate) type RawSocket = windows_sys::Win32::Networking::WinSock::SOCKET;
+
+// CENTRIFUGE: what Winsock promises of a returned length. It also forgets `len`'s old value.
+#[flux_rs::trusted(reason = "ABORT: the kernel writes at most the capacity it's given (ABORT.md §7)")]
+#[flux_rs::spec(fn(len: i32, cap: i32) -> i32{v: 0 <= v && v <= cap})]
+pub(crate) fn kernel_len(len: socklen_t, cap: socklen_t) -> socklen_t {
+    debug_assert!(0 <= len && len <= cap);
+    len
+}
 
 pub(crate) unsafe fn socket_from_raw(socket: RawSocket) -> Socket {
     Socket::from_raw_socket(socket as StdRawSocket)
@@ -897,6 +915,8 @@ pub(crate) unsafe fn getsockopt<T: GetsockoptOutput>(
 
 /// Caller must ensure `T` is the correct type for `level` and `optname`.
 // NOTE: `optname` is actually `i32`, but all constants are `u32`.
+#[flux_rs::spec(fn(RawSocket, c_int, i32, T) -> io::Result<()>
+                requires T::size_of() <= 2147483647)]
 pub(crate) unsafe fn setsockopt<T>(
     socket: RawSocket,
     level: c_int,
@@ -1019,12 +1039,27 @@ pub(crate) fn original_dst_v6(socket: RawSocket) -> io::Result<SockAddr> {
     .map(|(_, addr)| addr)
 }
 
+// CENTRIFUGE: `view_as` without its generic result, see log/NOTES.md.
+fn view_as_un(
+    storage: &mut SockAddrStorage,
+) -> &mut windows_sys::Win32::Networking::WinSock::SOCKADDR_UN {
+    unsafe { storage.view_as::<windows_sys::Win32::Networking::WinSock::SOCKADDR_UN>() }
+}
+
+// CENTRIFUGE: split out of `unix_sockaddr`, as on unix.
+#[flux_rs::trusted(reason = "ABORT: a field's address has no relation to its struct's in flux (ABORT.md §1)")]
+#[flux_rs::spec(fn(&windows_sys::Win32::Networking::WinSock::SOCKADDR_UN) -> usize[2])]
+fn offset_of_path(storage: &windows_sys::Win32::Networking::WinSock::SOCKADDR_UN) -> usize {
+    let base = storage as *const _ as usize;
+    let path = &storage.sun_path as *const _ as usize;
+    path - base
+}
+
 #[allow(unsafe_op_in_unsafe_fn)]
 pub(crate) fn unix_sockaddr(path: &Path) -> io::Result<SockAddr> {
     let mut storage = SockAddrStorage::zeroed();
     let len = {
-        let storage =
-            unsafe { storage.view_as::<windows_sys::Win32::Networking::WinSock::SOCKADDR_UN>() };
+        let storage = view_as_un(&mut storage);
 
         // Windows expects a UTF-8 path here even though Windows paths are
         // usually UCS-2 encoded. If Rust exposed OsStr's Wtf8 encoded
@@ -1055,10 +1090,7 @@ pub(crate) fn unix_sockaddr(path: &Path) -> io::Result<SockAddr> {
         // already null terminated.
         storage.sun_path[..bytes.len()].copy_from_slice(b);
 
-        let base = storage as *const _ as usize;
-        let path = &storage.sun_path as *const _ as usize;
-        let sun_path_offset = path - base;
-        sun_path_offset + bytes.len() + 1
+        offset_of_path(storage) + bytes.len() + 1
     };
     Ok(unsafe { SockAddr::new(storage, len as socklen_t) })
 }
