@@ -2448,6 +2448,7 @@ impl Socket {
     }
 }
 
+#[flux_rs::trusted_impl(reason = "ICE")]
 impl Read for Socket {
     fn read(&mut self, buf: &mut [u8]) -> io::Result<usize> {
         // Safety: the `recv` implementation promises not to write uninitialised
@@ -2457,6 +2458,7 @@ impl Read for Socket {
     }
 
     #[cfg(not(any(target_os = "redox", target_os = "wasi", target_os = "horizon")))]
+    #[flux_rs::trusted(reason = "panicked at /cargo/registry/25cdd57fae9f0462/ena-0.14.4/src/snapshot_vec.rs:199:10")]
     fn read_vectored(&mut self, bufs: &mut [IoSliceMut<'_>]) -> io::Result<usize> {
         // Safety: both `IoSliceMut` and `MaybeUninitSlice` promise to have the
         // same layout, that of `iovec`/`WSABUF`. Furthermore, `recv_vectored`
