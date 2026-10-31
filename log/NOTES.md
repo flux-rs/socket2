@@ -26,7 +26,7 @@ dlmalloc-rs, so it can exceed `processed - trusted`. `all` is on. Other `cfg`s o
 across both backends, each of `offset_of_path` and `kernel_len` having one per backend.
 
 To run on another target: `CARGO_BUILD_TARGET=<triple> python3 ../../harness/run_flux.py --full`.
-`log/*.json` are from macOS. The windows-sys git dependency needs `cargo fetch` outside the sandbox.
+`log/*.json` are from macOS. On Windows, `windows-sys` needs a `cargo fetch` outside the sandbox first.
 
 ## What is verified
 
