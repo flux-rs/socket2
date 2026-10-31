@@ -28,9 +28,9 @@
     "path": "sys::SockFilter",
     "span": {
       "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
-      "start_line": 3089,
+      "start_line": 3116,
       "start_col": 1,
-      "end_line": 3089,
+      "end_line": 3116,
       "end_col": 22
     },
     "deps": []
@@ -112,9 +112,9 @@
     "path": "sys::CcidEndpoints",
     "span": {
       "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
-      "start_line": 3120,
+      "start_line": 3147,
       "start_col": 1,
-      "end_line": 3120,
+      "end_line": 3147,
       "end_col": 41
     },
     "deps": []

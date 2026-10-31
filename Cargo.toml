@@ -32,6 +32,9 @@ flux-rs = { git = "https://github.com/flux-rs/flux", rev = "2cacd2ea00fdd96b4191
 flux-core = { git = "https://github.com/flux-rs/flux", rev = "2cacd2ea00fdd96b4191a2e4df035ddbd51f78ee" }
 flux-alloc = { git = "https://github.com/flux-rs/flux", rev = "2cacd2ea00fdd96b4191a2e4df035ddbd51f78ee" }
 
+[dev-dependencies]
+libc = "0.2.190"
+
 [package.metadata.flux]
 enabled = true
 

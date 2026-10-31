@@ -11,3 +11,9 @@ fn as_unix_panics_on_interior_null() {
     let addr = SockAddr::unix("a\0b").unwrap();
     let _ = addr.as_unix();
 }
+
+/// `offset_of_path`'s trusted spec, `flux_specs::sun_path_offset`.
+#[test]
+fn sun_path_offset_is_2() {
+    assert_eq!(std::mem::offset_of!(libc::sockaddr_un, sun_path), 2);
+}

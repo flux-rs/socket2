@@ -894,6 +894,13 @@ pub(crate) fn msghdr_control_len(msg: &msghdr) -> usize {
     msg.msg_controllen as _
 }
 
+// CENTRIFUGE: `view_as` without its generic result, see log/NOTES.md.
+#[cfg(all(feature = "all", any(target_os = "android", target_os = "linux")))]
+fn view_as_vm(storage: &mut SockAddrStorage) -> &mut libc::sockaddr_vm {
+    // SAFETY: sockaddr_vm is one of the sockaddr_* types defined by this platform.
+    unsafe { storage.view_as::<libc::sockaddr_vm>() }
+}
+
 /// Unix only API.
 impl SockAddr {
     /// Constructs a `SockAddr` with the family `AF_VSOCK` and the provided CID/port.
@@ -907,8 +914,7 @@ impl SockAddr {
     pub fn vsock(cid: u32, port: u32) -> SockAddr {
         let mut storage = SockAddrStorage::zeroed();
         {
-            // SAFETY: sockaddr_vm is one of the sockaddr_* types defined by this platform.
-            let storage = unsafe { storage.view_as::<libc::sockaddr_vm>() };
+            let storage = view_as_vm(&mut storage);
             storage.svm_family = libc::AF_VSOCK as sa_family_t;
             storage.svm_cid = cid;
             storage.svm_port = port;
@@ -959,6 +965,11 @@ impl SockAddr {
         })
     }
 
+    // CENTRIFUGE: the one assumption behind `as_pathname` and `as_abstract_namespace`.
+    #[flux_rs::trusted(reason = "ABORT: an `AF_UNIX` address fits a `sockaddr_un`, `SockAddr::new`'s contract, but `len` can't be tied to the family (ABORT.md §3)")]
+    #[flux_rs::spec(fn(&SockAddr[@a]) ensures a <= <libc::sockaddr_un as Sized>::size_of())]
+    fn assume_unix_len(&self) {}
+
     /// Get the length of the path bytes of the address, not including the terminating or initial
     /// (for abstract names) null byte.
     ///
@@ -1005,13 +1016,16 @@ impl SockAddr {
 
     /// Returns this address as a `Path` reference if it is an `AF_UNIX`
     /// pathname address, otherwise returns `None`.
-    #[flux_rs::trusted(reason = "ABORT: `len` can't be tied to the family, nor the `then` guard to its closure (ABORT.md §3)")]
     pub fn as_pathname(&self) -> Option<&Path> {
         self.as_sockaddr_un().and_then(|storage| {
-            (self.len() > offset_of_path(storage) as _ && storage.sun_path[0] != 0).then(|| {
+            // CENTRIFUGE: `if`, as flux can't carry `then`'s guard into its closure.
+            if self.len() > offset_of_path(storage) as _ && storage.sun_path[0] != 0 {
+                self.assume_unix_len();
                 let path_slice = self.path_bytes(storage, false);
-                Path::new::<OsStr>(OsStrExt::from_bytes(path_slice))
-            })
+                Some(Path::new::<OsStr>(OsStrExt::from_bytes(path_slice)))
+            } else {
+                None
+            }
         })
     }
 
@@ -1020,15 +1034,19 @@ impl SockAddr {
     ///
     /// Abstract addresses are a Linux extension, so this method returns `None` on all non-Linux
     /// platforms.
-    #[flux_rs::trusted(reason = "ABORT: `len` can't be tied to the family, nor the `then` guard to its closure (ABORT.md §3)")]
     pub fn as_abstract_namespace(&self) -> Option<&[u8]> {
         // NOTE: although Fuchsia does define `AF_UNIX` it's not actually implemented.
         // See https://github.com/rust-lang/socket2/pull/403#discussion_r1123557978
         #[cfg(any(target_os = "linux", target_os = "android", target_os = "cygwin"))]
         {
             self.as_sockaddr_un().and_then(|storage| {
-                (self.len() > offset_of_path(storage) as _ && storage.sun_path[0] == 0)
-                    .then(|| self.path_bytes(storage, true))
+                // CENTRIFUGE: `if`, as flux can't carry `then`'s guard into its closure.
+                if self.len() > offset_of_path(storage) as _ && storage.sun_path[0] == 0 {
+                    self.assume_unix_len();
+                    Some(self.path_bytes(storage, true))
+                } else {
+                    None
+                }
             })
         }
         #[cfg(not(any(target_os = "linux", target_os = "android", target_os = "cygwin")))]
@@ -1471,10 +1489,11 @@ fn fcntl_remove(fd: RawSocket, get_cmd: c_int, set_cmd: c_int, flag: c_int) -> i
 }
 
 /// Caller must ensure `T` is the correct type for `opt` and `val`.
-#[flux_rs::trusted(reason = "ABORT: `size_of` in a `Result::map` closure reported as panicking, flux false positive (ABORT.md §4)")]
 pub(crate) unsafe fn getsockopt<T>(fd: RawSocket, opt: c_int, val: c_int) -> io::Result<T> {
     let mut payload: MaybeUninit<T> = MaybeUninit::uninit();
-    let mut len = size_of::<T>() as libc::socklen_t;
+    // CENTRIFUGE: outside the closure, flux's no-panic check rejects it in one.
+    let size = size_of::<T>();
+    let mut len = size as libc::socklen_t;
     syscall!(getsockopt(
         fd,
         opt,
@@ -1483,7 +1502,7 @@ pub(crate) unsafe fn getsockopt<T>(fd: RawSocket, opt: c_int, val: c_int) -> io:
         &mut len,
     ))
     .map(|_| {
-        debug_assert_eq!(len as usize, size_of::<T>());
+        debug_assert_eq!(len as usize, size);
         // Safety: `getsockopt` initialised `payload` for us.
         payload.assume_init()
     })
@@ -1604,6 +1623,17 @@ pub(crate) fn original_dst_v6(fd: RawSocket) -> io::Result<SockAddr> {
         })
     }
     .map(|(_, addr)| addr)
+}
+
+// CENTRIFUGE: `device`'s buffer, split out so the rest of it stays checked.
+#[cfg(all(
+    feature = "all",
+    any(target_os = "android", target_os = "fuchsia", target_os = "linux")
+))]
+#[flux_rs::trusted(reason = "ABORT: flux-core's `assume_init` rejects an uninitialised `[MaybeUninit<u8>; N]` (ABORT.md §6)")]
+fn uninit_ifname() -> [MaybeUninit<u8>; libc::IFNAMSIZ] {
+    // TODO: replace with `MaybeUninit::uninit_array` once stable.
+    unsafe { MaybeUninit::uninit().assume_init() }
 }
 
 /// Unix only API.
@@ -2040,11 +2070,8 @@ impl crate::Socket {
         feature = "all",
         any(target_os = "android", target_os = "fuchsia", target_os = "linux")
     ))]
-    #[flux_rs::trusted(reason = "ABORT: flux-core's `assume_init` rejects an uninitialised `[MaybeUninit<u8>; N]` (ABORT.md §6)")]
     pub fn device(&self) -> io::Result<Option<Vec<u8>>> {
-        // TODO: replace with `MaybeUninit::uninit_array` once stable.
-        let mut buf: [MaybeUninit<u8>; libc::IFNAMSIZ] =
-            unsafe { MaybeUninit::uninit().assume_init() };
+        let mut buf = uninit_ifname();
         let mut len = buf.len() as libc::socklen_t;
         syscall!(getsockopt(
             self.as_raw(),
