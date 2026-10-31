@@ -59,6 +59,8 @@
 #![cfg_attr(test, deny(warnings))]
 // Disallow warnings in examples.
 #![doc(test(attr(deny(warnings))))]
+// CENTRIFUGE: flux injects `#![feature(custom_inner_attributes)]`.
+#![cfg_attr(flux, allow(unused_features))]
 
 use std::fmt;
 #[cfg(not(any(target_os = "redox", target_os = "wasi", target_os = "horizon")))]
@@ -171,6 +173,16 @@ macro_rules! man_links {
         )
     };
 }
+
+// CENTRIFUGE: load flux's extern specs for core and alloc.
+#[cfg(flux)]
+#[allow(unused_extern_crates)]
+extern crate flux_alloc;
+#[cfg(flux)]
+#[allow(unused_extern_crates)]
+extern crate flux_core;
+#[cfg(flux)]
+mod flux_specs;
 
 mod sockaddr;
 mod socket;

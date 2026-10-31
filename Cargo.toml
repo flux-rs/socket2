@@ -30,6 +30,7 @@ include       = [
 [dependencies]
 flux-rs = { git = "https://github.com/flux-rs/flux", rev = "2cacd2ea00fdd96b4191a2e4df035ddbd51f78ee" }
 flux-core = { git = "https://github.com/flux-rs/flux", rev = "2cacd2ea00fdd96b4191a2e4df035ddbd51f78ee" }
+flux-alloc = { git = "https://github.com/flux-rs/flux", rev = "2cacd2ea00fdd96b4191a2e4df035ddbd51f78ee" }
 
 [package.metadata.flux]
 enabled = true
@@ -75,6 +76,8 @@ features = [
 ]
 
 [features]
+# CENTRIFUGE: check the `all` API surface too
+default = ["all"]
 # Enable all API, even ones not available on all OSs.
 all = []
 

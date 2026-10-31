@@ -1,0 +1,6238 @@
+[
+  {
+    "uid": 0,
+    "path": "<TcpKeepalive as std::clone::Clone>::clone",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 449,
+      "start_col": 17,
+      "end_line": 449,
+      "end_col": 22
+    },
+    "deps": []
+  },
+  {
+    "uid": 1,
+    "path": "<TcpKeepalive as std::fmt::Debug>::fmt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 449,
+      "start_col": 10,
+      "end_line": 449,
+      "end_col": 15
+    },
+    "deps": []
+  },
+  {
+    "uid": 2,
+    "path": "<RecvFlags as std::cmp::PartialEq>::eq",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 391,
+      "start_col": 27,
+      "end_line": 391,
+      "end_col": 36
+    },
+    "deps": []
+  },
+  {
+    "uid": 3,
+    "path": "<RecvFlags as std::cmp::Eq>::assert_fields_are_eq",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 391,
+      "start_col": 23,
+      "end_line": 391,
+      "end_col": 25
+    },
+    "deps": []
+  },
+  {
+    "uid": 4,
+    "path": "<RecvFlags as std::clone::Clone>::clone",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 391,
+      "start_col": 16,
+      "end_line": 391,
+      "end_col": 21
+    },
+    "deps": []
+  },
+  {
+    "uid": 5,
+    "path": "<Protocol as std::cmp::PartialEq>::eq",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 328,
+      "start_col": 27,
+      "end_line": 328,
+      "end_col": 36
+    },
+    "deps": []
+  },
+  {
+    "uid": 6,
+    "path": "<Protocol as std::cmp::Eq>::assert_fields_are_eq",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 328,
+      "start_col": 23,
+      "end_line": 328,
+      "end_col": 25
+    },
+    "deps": []
+  },
+  {
+    "uid": 7,
+    "path": "<Protocol as std::clone::Clone>::clone",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 328,
+      "start_col": 16,
+      "end_line": 328,
+      "end_col": 21
+    },
+    "deps": []
+  },
+  {
+    "uid": 8,
+    "path": "<Type as std::cmp::PartialEq>::eq",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 269,
+      "start_col": 27,
+      "end_line": 269,
+      "end_col": 36
+    },
+    "deps": []
+  },
+  {
+    "uid": 9,
+    "path": "<Type as std::cmp::Eq>::assert_fields_are_eq",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 269,
+      "start_col": 23,
+      "end_line": 269,
+      "end_col": 25
+    },
+    "deps": []
+  },
+  {
+    "uid": 10,
+    "path": "<Type as std::clone::Clone>::clone",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 269,
+      "start_col": 16,
+      "end_line": 269,
+      "end_col": 21
+    },
+    "deps": []
+  },
+  {
+    "uid": 11,
+    "path": "<Domain as std::cmp::PartialEq>::eq",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 217,
+      "start_col": 27,
+      "end_line": 217,
+      "end_col": 36
+    },
+    "deps": []
+  },
+  {
+    "uid": 12,
+    "path": "<Domain as std::cmp::Eq>::assert_fields_are_eq",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 217,
+      "start_col": 23,
+      "end_line": 217,
+      "end_col": 25
+    },
+    "deps": []
+  },
+  {
+    "uid": 13,
+    "path": "<Domain as std::clone::Clone>::clone",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 217,
+      "start_col": 16,
+      "end_line": 217,
+      "end_col": 21
+    },
+    "deps": []
+  },
+  {
+    "uid": 14,
+    "path": "sys::socket_into_raw",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1014,
+      "start_col": 1,
+      "end_line": 1014,
+      "end_col": 59
+    },
+    "deps": []
+  },
+  {
+    "uid": 15,
+    "path": "sys::socket_from_raw",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1006,
+      "start_col": 1,
+      "end_line": 1006,
+      "end_col": 66
+    },
+    "deps": []
+  },
+  {
+    "uid": 16,
+    "path": "sys::<impl std::fmt::Debug for Protocol>::fmt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 93,
+      "start_col": 13,
+      "end_line": 93,
+      "end_col": 79
+    },
+    "deps": []
+  },
+  {
+    "uid": 17,
+    "path": "sys::<impl std::fmt::Debug for Type>::fmt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 93,
+      "start_col": 13,
+      "end_line": 93,
+      "end_col": 79
+    },
+    "deps": []
+  },
+  {
+    "uid": 18,
+    "path": "sys::<impl std::fmt::Debug for Domain>::fmt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 93,
+      "start_col": 13,
+      "end_line": 93,
+      "end_col": 79
+    },
+    "deps": []
+  },
+  {
+    "uid": 19,
+    "path": "<&'a socket::Socket as std::io::Read>::read_vectored::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2485,
+      "start_col": 38,
+      "end_line": 2485,
+      "end_col": 46
+    },
+    "deps": []
+  },
+  {
+    "uid": 20,
+    "path": "<&'a socket::Socket as std::io::Read>::read_vectored::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2485,
+      "start_col": 38,
+      "end_line": 2485,
+      "end_col": 46
+    },
+    "deps": []
+  },
+  {
+    "uid": 21,
+    "path": "sys::msghdr_flags",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 860,
+      "start_col": 1,
+      "end_line": 860,
+      "end_col": 54
+    },
+    "deps": []
+  },
+  {
+    "uid": 22,
+    "path": "sys::recvmsg",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1225,
+      "start_col": 1,
+      "end_line": 1229,
+      "end_col": 23
+    },
+    "deps": []
+  },
+  {
+    "uid": 23,
+    "path": "sys::recvmsg::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1230,
+      "start_col": 54,
+      "end_line": 1230,
+      "end_col": 57
+    },
+    "deps": []
+  },
+  {
+    "uid": 24,
+    "path": "sys::set_msghdr_iov",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 843,
+      "start_col": 1,
+      "end_line": 843,
+      "end_col": 82
+    },
+    "deps": []
+  },
+  {
+    "uid": 25,
+    "path": "MsgHdrMut::<'addr, 'bufs, 'control>::new",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 693,
+      "start_col": 5,
+      "end_line": 693,
+      "end_col": 54
+    },
+    "deps": []
+  },
+  {
+    "uid": 26,
+    "path": "sys::socket_as_raw",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1010,
+      "start_col": 1,
+      "end_line": 1010,
+      "end_col": 58
+    },
+    "deps": []
+  },
+  {
+    "uid": 27,
+    "path": "sys::recv",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1151,
+      "start_col": 1,
+      "end_line": 1151,
+      "end_col": 98
+    },
+    "deps": []
+  },
+  {
+    "uid": 28,
+    "path": "sys::recv::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1158,
+      "start_col": 10,
+      "end_line": 1158,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 29,
+    "path": "<socket::Socket as std::io::Read>::read_vectored::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2468,
+      "start_col": 38,
+      "end_line": 2468,
+      "end_col": 46
+    },
+    "deps": []
+  },
+  {
+    "uid": 30,
+    "path": "<socket::Socket as std::io::Read>::read_vectored::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2468,
+      "start_col": 38,
+      "end_line": 2468,
+      "end_col": 46
+    },
+    "deps": []
+  },
+  {
+    "uid": 31,
+    "path": "<socket::InterfaceIndexOrAddress as std::clone::Clone>::clone",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 859,
+      "start_col": 23,
+      "end_line": 859,
+      "end_col": 28
+    },
+    "deps": []
+  },
+  {
+    "uid": 32,
+    "path": "<socket::InterfaceIndexOrAddress as std::fmt::Debug>::fmt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 859,
+      "start_col": 10,
+      "end_line": 859,
+      "end_col": 15
+    },
+    "deps": []
+  },
+  {
+    "uid": 33,
+    "path": "<sockaddr::SockAddr as std::clone::Clone>::clone",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 93,
+      "start_col": 10,
+      "end_line": 93,
+      "end_col": 15
+    },
+    "deps": []
+  },
+  {
+    "uid": 34,
+    "path": "<MsgHdrMut<'name, 'bufs, 'control> as std::fmt::Debug>::fmt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 748,
+      "start_col": 5,
+      "end_line": 748,
+      "end_col": 63
+    },
+    "deps": []
+  },
+  {
+    "uid": 35,
+    "path": "sys::msghdr_control_len",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 865,
+      "start_col": 1,
+      "end_line": 865,
+      "end_col": 56
+    },
+    "deps": []
+  },
+  {
+    "uid": 36,
+    "path": "sys::set_msghdr_control",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 849,
+      "start_col": 1,
+      "end_line": 849,
+      "end_col": 87
+    },
+    "deps": []
+  },
+  {
+    "uid": 37,
+    "path": "sys::set_msghdr_name",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 836,
+      "start_col": 1,
+      "end_line": 836,
+      "end_col": 97
+    },
+    "deps": []
+  },
+  {
+    "uid": 38,
+    "path": "sockaddr::SockAddr::as_mut_ptr",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 270,
+      "start_col": 5,
+      "end_line": 270,
+      "end_col": 57
+    },
+    "deps": []
+  },
+  {
+    "uid": 39,
+    "path": "sockaddr::SockAddr::len",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 260,
+      "start_col": 5,
+      "end_line": 260,
+      "end_col": 41
+    },
+    "deps": []
+  },
+  {
+    "uid": 40,
+    "path": "MsgHdrMut::<'addr, 'bufs, 'control>::new",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 693,
+      "start_col": 5,
+      "end_line": 693,
+      "end_col": 54
+    },
+    "deps": []
+  },
+  {
+    "uid": 41,
+    "path": "<MsgHdr<'name, 'bufs, 'control> as std::fmt::Debug>::fmt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 665,
+      "start_col": 5,
+      "end_line": 665,
+      "end_col": 63
+    },
+    "deps": []
+  },
+  {
+    "uid": 42,
+    "path": "sys::set_msghdr_flags",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 855,
+      "start_col": 1,
+      "end_line": 855,
+      "end_col": 63
+    },
+    "deps": []
+  },
+  {
+    "uid": 43,
+    "path": "sockaddr::SockAddr::as_ptr",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 265,
+      "start_col": 5,
+      "end_line": 265,
+      "end_col": 57
+    },
+    "deps": []
+  },
+  {
+    "uid": 44,
+    "path": "MsgHdr::<'addr, 'bufs, 'control>::new",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 612,
+      "start_col": 5,
+      "end_line": 612,
+      "end_col": 51
+    },
+    "deps": []
+  },
+  {
+    "uid": 45,
+    "path": "TcpKeepalive::with_retries",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 588,
+      "start_col": 5,
+      "end_line": 588,
+      "end_col": 58
+    },
+    "deps": []
+  },
+  {
+    "uid": 46,
+    "path": "TcpKeepalive::with_interval",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 555,
+      "start_col": 5,
+      "end_line": 555,
+      "end_col": 65
+    },
+    "deps": []
+  },
+  {
+    "uid": 47,
+    "path": "TcpKeepalive::with_time",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 522,
+      "start_col": 5,
+      "end_line": 522,
+      "end_col": 57
+    },
+    "deps": []
+  },
+  {
+    "uid": 48,
+    "path": "TcpKeepalive::new",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 483,
+      "start_col": 5,
+      "end_line": 483,
+      "end_col": 39
+    },
+    "deps": []
+  },
+  {
+    "uid": 49,
+    "path": "sys::MaybeUninitSlice::<'a>::as_mut_slice",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 727,
+      "start_col": 5,
+      "end_line": 727,
+      "end_col": 68
+    },
+    "deps": []
+  },
+  {
+    "uid": 50,
+    "path": "sys::MaybeUninitSlice::<'a>::as_slice",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 723,
+      "start_col": 5,
+      "end_line": 723,
+      "end_col": 56
+    },
+    "deps": []
+  },
+  {
+    "uid": 51,
+    "path": "sys::MaybeUninitSlice::<'a>::new",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 713,
+      "start_col": 5,
+      "end_line": 713,
+      "end_col": 78
+    },
+    "deps": []
+  },
+  {
+    "uid": 52,
+    "path": "RecvFlags::is_truncated",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 404,
+      "start_col": 5,
+      "end_line": 404,
+      "end_col": 44
+    },
+    "deps": []
+  },
+  {
+    "uid": 53,
+    "path": "<impl std::convert::From<Protocol> for i32>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 382,
+      "start_col": 5,
+      "end_line": 382,
+      "end_col": 34
+    },
+    "deps": []
+  },
+  {
+    "uid": 54,
+    "path": "<Protocol as std::convert::From<i32>>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 376,
+      "start_col": 5,
+      "end_line": 376,
+      "end_col": 34
+    },
+    "deps": []
+  },
+  {
+    "uid": 55,
+    "path": "<impl std::convert::From<Type> for i32>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 316,
+      "start_col": 5,
+      "end_line": 316,
+      "end_col": 30
+    },
+    "deps": []
+  },
+  {
+    "uid": 56,
+    "path": "<Type as std::convert::From<i32>>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 310,
+      "start_col": 5,
+      "end_line": 310,
+      "end_col": 30
+    },
+    "deps": []
+  },
+  {
+    "uid": 57,
+    "path": "<impl std::convert::From<Domain> for i32>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 255,
+      "start_col": 5,
+      "end_line": 255,
+      "end_col": 32
+    },
+    "deps": []
+  },
+  {
+    "uid": 58,
+    "path": "<Domain as std::convert::From<i32>>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 249,
+      "start_col": 5,
+      "end_line": 249,
+      "end_col": 32
+    },
+    "deps": []
+  },
+  {
+    "uid": 59,
+    "path": "Domain::for_address",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 240,
+      "start_col": 5,
+      "end_line": 240,
+      "end_col": 60
+    },
+    "deps": []
+  },
+  {
+    "uid": 60,
+    "path": "sys::setsockopt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1454,
+      "start_col": 1,
+      "end_line": 1459,
+      "end_col": 20
+    },
+    "deps": []
+  },
+  {
+    "uid": 61,
+    "path": "sys::setsockopt::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1468,
+      "start_col": 10,
+      "end_line": 1468,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 62,
+    "path": "sys::<impl socket::Socket>::tclass_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 2727,
+      "start_col": 22,
+      "end_line": 2727,
+      "end_col": 30
+    },
+    "deps": []
+  },
+  {
+    "uid": 63,
+    "path": "sys::<impl socket::Socket>::tclass_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 2727,
+      "start_col": 22,
+      "end_line": 2727,
+      "end_col": 30
+    },
+    "deps": []
+  },
+  {
+    "uid": 64,
+    "path": "sys::getsockopt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1436,
+      "start_col": 1,
+      "end_line": 1436,
+      "end_col": 91
+    },
+    "deps": []
+  },
+  {
+    "uid": 65,
+    "path": "sys::getsockopt::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1446,
+      "start_col": 10,
+      "end_line": 1446,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 66,
+    "path": "sys::<impl socket::Socket>::_sendfile::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 2524,
+      "start_col": 14,
+      "end_line": 2524,
+      "end_col": 17
+    },
+    "deps": []
+  },
+  {
+    "uid": 67,
+    "path": "sys::<impl socket::Socket>::_sendfile::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 2524,
+      "start_col": 14,
+      "end_line": 2524,
+      "end_col": 17
+    },
+    "deps": []
+  },
+  {
+    "uid": 68,
+    "path": "sys::<impl socket::Socket>::reuse_port::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 2294,
+      "start_col": 22,
+      "end_line": 2294,
+      "end_col": 29
+    },
+    "deps": []
+  },
+  {
+    "uid": 69,
+    "path": "sys::<impl socket::Socket>::reuse_port::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 2294,
+      "start_col": 22,
+      "end_line": 2294,
+      "end_col": 29
+    },
+    "deps": []
+  },
+  {
+    "uid": 70,
+    "path": "sys::getsockopt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1436,
+      "start_col": 1,
+      "end_line": 1436,
+      "end_col": 91
+    },
+    "deps": []
+  },
+  {
+    "uid": 71,
+    "path": "sys::getsockopt::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1446,
+      "start_col": 10,
+      "end_line": 1446,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 72,
+    "path": "sys::setsockopt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1454,
+      "start_col": 1,
+      "end_line": 1459,
+      "end_col": 20
+    },
+    "deps": []
+  },
+  {
+    "uid": 73,
+    "path": "sys::setsockopt::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1468,
+      "start_col": 10,
+      "end_line": 1468,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 74,
+    "path": "sys::<impl socket::Socket>::tcp_mss::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1726,
+      "start_col": 22,
+      "end_line": 1726,
+      "end_col": 27
+    },
+    "deps": []
+  },
+  {
+    "uid": 75,
+    "path": "sys::<impl socket::Socket>::tcp_mss::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1726,
+      "start_col": 22,
+      "end_line": 1726,
+      "end_col": 27
+    },
+    "deps": []
+  },
+  {
+    "uid": 76,
+    "path": "sys::fcntl_remove::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1428,
+      "start_col": 47,
+      "end_line": 1428,
+      "end_col": 50
+    },
+    "deps": []
+  },
+  {
+    "uid": 77,
+    "path": "sys::fcntl_get",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1405,
+      "start_col": 1,
+      "end_line": 1405,
+      "end_col": 61
+    },
+    "deps": []
+  },
+  {
+    "uid": 78,
+    "path": "sys::fcntl_add::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1415,
+      "start_col": 47,
+      "end_line": 1415,
+      "end_col": 50
+    },
+    "deps": []
+  },
+  {
+    "uid": 79,
+    "path": "sys::to_in_addr",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1471,
+      "start_col": 1,
+      "end_line": 1471,
+      "end_col": 59
+    },
+    "deps": []
+  },
+  {
+    "uid": 80,
+    "path": "sys::from_in6_addr",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1490,
+      "start_col": 1,
+      "end_line": 1490,
+      "end_col": 56
+    },
+    "deps": []
+  },
+  {
+    "uid": 81,
+    "path": "sys::to_in6_addr",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1484,
+      "start_col": 1,
+      "end_line": 1484,
+      "end_col": 61
+    },
+    "deps": []
+  },
+  {
+    "uid": 82,
+    "path": "sys::from_in_addr",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1480,
+      "start_col": 1,
+      "end_line": 1480,
+      "end_col": 57
+    },
+    "deps": []
+  },
+  {
+    "uid": 83,
+    "path": "sys::setsockopt::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1468,
+      "start_col": 10,
+      "end_line": 1468,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 84,
+    "path": "sys::setsockopt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1454,
+      "start_col": 1,
+      "end_line": 1459,
+      "end_col": 20
+    },
+    "deps": []
+  },
+  {
+    "uid": 85,
+    "path": "sys::getsockopt::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1446,
+      "start_col": 10,
+      "end_line": 1446,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 86,
+    "path": "sys::getsockopt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1436,
+      "start_col": 1,
+      "end_line": 1436,
+      "end_col": 91
+    },
+    "deps": []
+  },
+  {
+    "uid": 87,
+    "path": "sys::fcntl_remove::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1428,
+      "start_col": 47,
+      "end_line": 1428,
+      "end_col": 50
+    },
+    "deps": []
+  },
+  {
+    "uid": 88,
+    "path": "sys::fcntl_add::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1415,
+      "start_col": 47,
+      "end_line": 1415,
+      "end_col": 50
+    },
+    "deps": []
+  },
+  {
+    "uid": 89,
+    "path": "sys::into_secs",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1399,
+      "start_col": 1,
+      "end_line": 1399,
+      "end_col": 42
+    },
+    "deps": []
+  },
+  {
+    "uid": 90,
+    "path": "sys::tcp_keepalive_time::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1334,
+      "start_col": 18,
+      "end_line": 1334,
+      "end_col": 24
+    },
+    "deps": []
+  },
+  {
+    "uid": 91,
+    "path": "sys::tcp_keepalive_time::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1334,
+      "start_col": 18,
+      "end_line": 1334,
+      "end_col": 24
+    },
+    "deps": []
+  },
+  {
+    "uid": 92,
+    "path": "sys::into_timeval",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1312,
+      "start_col": 1,
+      "end_line": 1312,
+      "end_col": 61
+    },
+    "deps": []
+  },
+  {
+    "uid": 93,
+    "path": "sys::setsockopt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1454,
+      "start_col": 1,
+      "end_line": 1459,
+      "end_col": 20
+    },
+    "deps": []
+  },
+  {
+    "uid": 94,
+    "path": "sys::setsockopt::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1468,
+      "start_col": 10,
+      "end_line": 1468,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 95,
+    "path": "sys::from_timeval",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1291,
+      "start_col": 1,
+      "end_line": 1291,
+      "end_col": 67
+    },
+    "deps": []
+  },
+  {
+    "uid": 96,
+    "path": "sys::getsockopt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1436,
+      "start_col": 1,
+      "end_line": 1436,
+      "end_col": 91
+    },
+    "deps": []
+  },
+  {
+    "uid": 97,
+    "path": "sys::getsockopt::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1446,
+      "start_col": 10,
+      "end_line": 1446,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 98,
+    "path": "sys::sendmsg::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1283,
+      "start_col": 50,
+      "end_line": 1283,
+      "end_col": 53
+    },
+    "deps": []
+  },
+  {
+    "uid": 99,
+    "path": "sys::sendmsg",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1282,
+      "start_col": 1,
+      "end_line": 1282,
+      "end_col": 98
+    },
+    "deps": []
+  },
+  {
+    "uid": 100,
+    "path": "sys::sendmsg::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1283,
+      "start_col": 50,
+      "end_line": 1283,
+      "end_col": 53
+    },
+    "deps": []
+  },
+  {
+    "uid": 101,
+    "path": "MsgHdr::<'addr, 'bufs, 'control>::new",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 612,
+      "start_col": 5,
+      "end_line": 612,
+      "end_col": 51
+    },
+    "deps": []
+  },
+  {
+    "uid": 102,
+    "path": "sys::send_to::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1267,
+      "start_col": 10,
+      "end_line": 1267,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 103,
+    "path": "sys::send_to::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1267,
+      "start_col": 10,
+      "end_line": 1267,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 104,
+    "path": "sys::send::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1240,
+      "start_col": 10,
+      "end_line": 1240,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 105,
+    "path": "sys::send",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1233,
+      "start_col": 1,
+      "end_line": 1233,
+      "end_col": 81
+    },
+    "deps": []
+  },
+  {
+    "uid": 106,
+    "path": "sys::send::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1240,
+      "start_col": 10,
+      "end_line": 1240,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 107,
+    "path": "sys::recvmsg::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1230,
+      "start_col": 54,
+      "end_line": 1230,
+      "end_col": 57
+    },
+    "deps": []
+  },
+  {
+    "uid": 108,
+    "path": "sockaddr::SockAddr::new",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 145,
+      "start_col": 5,
+      "end_line": 145,
+      "end_col": 82
+    },
+    "deps": []
+  },
+  {
+    "uid": 109,
+    "path": "sockaddr::SockAddrStorage::zeroed",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 39,
+      "start_col": 5,
+      "end_line": 39,
+      "end_col": 28
+    },
+    "deps": []
+  },
+  {
+    "uid": 110,
+    "path": "sys::recv_from::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1168,
+      "start_col": 28,
+      "end_line": 1168,
+      "end_col": 43
+    },
+    "deps": []
+  },
+  {
+    "uid": 111,
+    "path": "sys::recv_from::{closure#0}::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1177,
+      "start_col": 18,
+      "end_line": 1177,
+      "end_col": 21
+    },
+    "deps": []
+  },
+  {
+    "uid": 112,
+    "path": "sys::recv_from::{closure#0}::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1177,
+      "start_col": 18,
+      "end_line": 1177,
+      "end_col": 21
+    },
+    "deps": []
+  },
+  {
+    "uid": 113,
+    "path": "sys::recv_from::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1168,
+      "start_col": 28,
+      "end_line": 1168,
+      "end_col": 43
+    },
+    "deps": []
+  },
+  {
+    "uid": 114,
+    "path": "sys::recv::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1158,
+      "start_col": 10,
+      "end_line": 1158,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 115,
+    "path": "sys::shutdown::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1148,
+      "start_col": 37,
+      "end_line": 1148,
+      "end_col": 40
+    },
+    "deps": []
+  },
+  {
+    "uid": 116,
+    "path": "sys::shutdown",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1142,
+      "start_col": 1,
+      "end_line": 1142,
+      "end_col": 71
+    },
+    "deps": []
+  },
+  {
+    "uid": 117,
+    "path": "sys::shutdown::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1148,
+      "start_col": 37,
+      "end_line": 1148,
+      "end_col": 40
+    },
+    "deps": []
+  },
+  {
+    "uid": 118,
+    "path": "sys::try_clone",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1100,
+      "start_col": 1,
+      "end_line": 1100,
+      "end_col": 64
+    },
+    "deps": []
+  },
+  {
+    "uid": 119,
+    "path": "sys::getpeername::{closure#1}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1096,
+      "start_col": 14,
+      "end_line": 1096,
+      "end_col": 25
+    },
+    "deps": []
+  },
+  {
+    "uid": 120,
+    "path": "sys::getpeername::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1095,
+      "start_col": 33,
+      "end_line": 1095,
+      "end_col": 47
+    },
+    "deps": []
+  },
+  {
+    "uid": 121,
+    "path": "sys::getpeername::{closure#1}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1096,
+      "start_col": 14,
+      "end_line": 1096,
+      "end_col": 25
+    },
+    "deps": []
+  },
+  {
+    "uid": 122,
+    "path": "sys::getpeername::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1095,
+      "start_col": 33,
+      "end_line": 1095,
+      "end_col": 47
+    },
+    "deps": []
+  },
+  {
+    "uid": 123,
+    "path": "sys::getsockname::{closure#1}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1090,
+      "start_col": 14,
+      "end_line": 1090,
+      "end_col": 25
+    },
+    "deps": []
+  },
+  {
+    "uid": 124,
+    "path": "sys::getsockname::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1089,
+      "start_col": 33,
+      "end_line": 1089,
+      "end_col": 47
+    },
+    "deps": []
+  },
+  {
+    "uid": 125,
+    "path": "sys::getsockname::{closure#1}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1090,
+      "start_col": 14,
+      "end_line": 1090,
+      "end_col": 25
+    },
+    "deps": []
+  },
+  {
+    "uid": 126,
+    "path": "sys::getsockname::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1089,
+      "start_col": 33,
+      "end_line": 1089,
+      "end_col": 47
+    },
+    "deps": []
+  },
+  {
+    "uid": 127,
+    "path": "sys::accept::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1084,
+      "start_col": 33,
+      "end_line": 1084,
+      "end_col": 47
+    },
+    "deps": []
+  },
+  {
+    "uid": 128,
+    "path": "sys::accept::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1084,
+      "start_col": 33,
+      "end_line": 1084,
+      "end_col": 47
+    },
+    "deps": []
+  },
+  {
+    "uid": 129,
+    "path": "sys::listen::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1079,
+      "start_col": 39,
+      "end_line": 1079,
+      "end_col": 42
+    },
+    "deps": []
+  },
+  {
+    "uid": 130,
+    "path": "sys::listen",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1078,
+      "start_col": 1,
+      "end_line": 1078,
+      "end_col": 70
+    },
+    "deps": []
+  },
+  {
+    "uid": 131,
+    "path": "sys::listen::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1079,
+      "start_col": 39,
+      "end_line": 1079,
+      "end_col": 42
+    },
+    "deps": []
+  },
+  {
+    "uid": 132,
+    "path": "sys::connect::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1033,
+      "start_col": 77,
+      "end_line": 1033,
+      "end_col": 80
+    },
+    "deps": []
+  },
+  {
+    "uid": 133,
+    "path": "sys::connect::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1033,
+      "start_col": 77,
+      "end_line": 1033,
+      "end_col": 80
+    },
+    "deps": []
+  },
+  {
+    "uid": 134,
+    "path": "sys::bind::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1029,
+      "start_col": 79,
+      "end_line": 1029,
+      "end_col": 82
+    },
+    "deps": []
+  },
+  {
+    "uid": 135,
+    "path": "sys::bind::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1029,
+      "start_col": 79,
+      "end_line": 1029,
+      "end_col": 82
+    },
+    "deps": []
+  },
+  {
+    "uid": 136,
+    "path": "sys::socketpair::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1025,
+      "start_col": 70,
+      "end_line": 1025,
+      "end_col": 73
+    },
+    "deps": []
+  },
+  {
+    "uid": 137,
+    "path": "sys::socketpair",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1023,
+      "start_col": 1,
+      "end_line": 1023,
+      "end_col": 98
+    },
+    "deps": []
+  },
+  {
+    "uid": 138,
+    "path": "sys::socketpair::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1025,
+      "start_col": 70,
+      "end_line": 1025,
+      "end_col": 73
+    },
+    "deps": []
+  },
+  {
+    "uid": 139,
+    "path": "sys::socket",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1018,
+      "start_col": 1,
+      "end_line": 1018,
+      "end_col": 89
+    },
+    "deps": []
+  },
+  {
+    "uid": 140,
+    "path": "sys::<impl sockaddr::SockAddr>::as_abstract_namespace",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 988,
+      "start_col": 5,
+      "end_line": 988,
+      "end_col": 57
+    },
+    "deps": []
+  },
+  {
+    "uid": 141,
+    "path": "sys::offset_of_path",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 734,
+      "start_col": 1,
+      "end_line": 734,
+      "end_col": 67
+    },
+    "deps": []
+  },
+  {
+    "uid": 142,
+    "path": "sockaddr::SockAddr::is_unix",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 295,
+      "start_col": 5,
+      "end_line": 295,
+      "end_col": 34
+    },
+    "deps": []
+  },
+  {
+    "uid": 143,
+    "path": "sockaddr::SockAddrStorage::view_as",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 73,
+      "start_col": 5,
+      "end_line": 73,
+      "end_col": 50
+    },
+    "deps": []
+  },
+  {
+    "uid": 144,
+    "path": "sys::MaybeUninitSlice::<'a>::as_mut_slice",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 727,
+      "start_col": 5,
+      "end_line": 727,
+      "end_col": 68
+    },
+    "deps": []
+  },
+  {
+    "uid": 145,
+    "path": "sys::MaybeUninitSlice::<'a>::as_slice",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 723,
+      "start_col": 5,
+      "end_line": 723,
+      "end_col": 56
+    },
+    "deps": []
+  },
+  {
+    "uid": 146,
+    "path": "sys::MaybeUninitSlice::<'a>::new",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 713,
+      "start_col": 5,
+      "end_line": 713,
+      "end_col": 78
+    },
+    "deps": []
+  },
+  {
+    "uid": 147,
+    "path": "sys::<impl RecvFlags>::is_out_of_band",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 651,
+      "start_col": 5,
+      "end_line": 651,
+      "end_col": 46
+    },
+    "deps": []
+  },
+  {
+    "uid": 148,
+    "path": "sys::<impl RecvFlags>::is_end_of_record",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 641,
+      "start_col": 5,
+      "end_line": 641,
+      "end_col": 48
+    },
+    "deps": []
+  },
+  {
+    "uid": 149,
+    "path": "<sockref::SockRef<'s> as std::ops::Deref>::deref",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockref.rs",
+      "start_line": 74,
+      "start_col": 5,
+      "end_line": 74,
+      "end_col": 37
+    },
+    "deps": []
+  },
+  {
+    "uid": 150,
+    "path": "<&'a socket::Socket as std::io::Write>::flush",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2514,
+      "start_col": 5,
+      "end_line": 2514,
+      "end_col": 42
+    },
+    "deps": []
+  },
+  {
+    "uid": 151,
+    "path": "<socket::Socket as std::io::Write>::flush",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2499,
+      "start_col": 5,
+      "end_line": 2499,
+      "end_col": 42
+    },
+    "deps": []
+  },
+  {
+    "uid": 152,
+    "path": "socket::Socket::tcp_nodelay::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2420,
+      "start_col": 22,
+      "end_line": 2420,
+      "end_col": 31
+    },
+    "deps": []
+  },
+  {
+    "uid": 153,
+    "path": "socket::Socket::tcp_nodelay::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2420,
+      "start_col": 22,
+      "end_line": 2420,
+      "end_col": 31
+    },
+    "deps": []
+  },
+  {
+    "uid": 154,
+    "path": "socket::Socket::tcp_keepalive_retries::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2365,
+      "start_col": 22,
+      "end_line": 2365,
+      "end_col": 31
+    },
+    "deps": []
+  },
+  {
+    "uid": 155,
+    "path": "socket::Socket::tcp_keepalive_retries::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2365,
+      "start_col": 22,
+      "end_line": 2365,
+      "end_col": 31
+    },
+    "deps": []
+  },
+  {
+    "uid": 156,
+    "path": "socket::Socket::tcp_keepalive_interval::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2331,
+      "start_col": 22,
+      "end_line": 2331,
+      "end_col": 28
+    },
+    "deps": []
+  },
+  {
+    "uid": 157,
+    "path": "socket::Socket::tcp_keepalive_interval::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2331,
+      "start_col": 22,
+      "end_line": 2331,
+      "end_col": 28
+    },
+    "deps": []
+  },
+  {
+    "uid": 158,
+    "path": "socket::Socket::recv_hoplimit_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2230,
+      "start_col": 22,
+      "end_line": 2230,
+      "end_col": 37
+    },
+    "deps": []
+  },
+  {
+    "uid": 159,
+    "path": "socket::Socket::recv_hoplimit_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2230,
+      "start_col": 22,
+      "end_line": 2230,
+      "end_col": 37
+    },
+    "deps": []
+  },
+  {
+    "uid": 160,
+    "path": "socket::Socket::recv_tclass_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2166,
+      "start_col": 22,
+      "end_line": 2166,
+      "end_col": 35
+    },
+    "deps": []
+  },
+  {
+    "uid": 161,
+    "path": "socket::Socket::recv_tclass_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2166,
+      "start_col": 22,
+      "end_line": 2166,
+      "end_col": 35
+    },
+    "deps": []
+  },
+  {
+    "uid": 162,
+    "path": "socket::Socket::only_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2119,
+      "start_col": 22,
+      "end_line": 2119,
+      "end_col": 31
+    },
+    "deps": []
+  },
+  {
+    "uid": 163,
+    "path": "socket::Socket::only_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2119,
+      "start_col": 22,
+      "end_line": 2119,
+      "end_col": 31
+    },
+    "deps": []
+  },
+  {
+    "uid": 164,
+    "path": "socket::Socket::unicast_hops_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2064,
+      "start_col": 22,
+      "end_line": 2064,
+      "end_col": 28
+    },
+    "deps": []
+  },
+  {
+    "uid": 165,
+    "path": "socket::Socket::unicast_hops_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2064,
+      "start_col": 22,
+      "end_line": 2064,
+      "end_col": 28
+    },
+    "deps": []
+  },
+  {
+    "uid": 166,
+    "path": "socket::Socket::multicast_loop_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2039,
+      "start_col": 22,
+      "end_line": 2039,
+      "end_col": 31
+    },
+    "deps": []
+  },
+  {
+    "uid": 167,
+    "path": "socket::Socket::multicast_loop_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2039,
+      "start_col": 22,
+      "end_line": 2039,
+      "end_col": 31
+    },
+    "deps": []
+  },
+  {
+    "uid": 168,
+    "path": "socket::Socket::multicast_if_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2010,
+      "start_col": 22,
+      "end_line": 2010,
+      "end_col": 33
+    },
+    "deps": []
+  },
+  {
+    "uid": 169,
+    "path": "socket::Socket::multicast_if_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2010,
+      "start_col": 22,
+      "end_line": 2010,
+      "end_col": 33
+    },
+    "deps": []
+  },
+  {
+    "uid": 170,
+    "path": "socket::Socket::multicast_hops_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1945,
+      "start_col": 22,
+      "end_line": 1945,
+      "end_col": 28
+    },
+    "deps": []
+  },
+  {
+    "uid": 171,
+    "path": "socket::Socket::multicast_hops_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1945,
+      "start_col": 22,
+      "end_line": 1945,
+      "end_col": 28
+    },
+    "deps": []
+  },
+  {
+    "uid": 172,
+    "path": "sys::setsockopt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1454,
+      "start_col": 1,
+      "end_line": 1459,
+      "end_col": 20
+    },
+    "deps": []
+  },
+  {
+    "uid": 173,
+    "path": "sys::setsockopt::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1468,
+      "start_col": 10,
+      "end_line": 1468,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 174,
+    "path": "socket::Socket::header_included_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1804,
+      "start_col": 22,
+      "end_line": 1804,
+      "end_col": 32
+    },
+    "deps": []
+  },
+  {
+    "uid": 175,
+    "path": "socket::Socket::header_included_v6::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1804,
+      "start_col": 22,
+      "end_line": 1804,
+      "end_col": 32
+    },
+    "deps": []
+  },
+  {
+    "uid": 176,
+    "path": "socket::Socket::recv_tos_v4::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1757,
+      "start_col": 22,
+      "end_line": 1757,
+      "end_col": 32
+    },
+    "deps": []
+  },
+  {
+    "uid": 177,
+    "path": "socket::Socket::recv_tos_v4::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1757,
+      "start_col": 22,
+      "end_line": 1757,
+      "end_col": 32
+    },
+    "deps": []
+  },
+  {
+    "uid": 178,
+    "path": "socket::Socket::tos_v4::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1691,
+      "start_col": 82,
+      "end_line": 1691,
+      "end_col": 87
+    },
+    "deps": []
+  },
+  {
+    "uid": 179,
+    "path": "socket::Socket::tos_v4::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1691,
+      "start_col": 82,
+      "end_line": 1691,
+      "end_col": 87
+    },
+    "deps": []
+  },
+  {
+    "uid": 180,
+    "path": "socket::Socket::ttl_v4::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1622,
+      "start_col": 82,
+      "end_line": 1622,
+      "end_col": 87
+    },
+    "deps": []
+  },
+  {
+    "uid": 181,
+    "path": "socket::Socket::ttl_v4::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1622,
+      "start_col": 82,
+      "end_line": 1622,
+      "end_col": 87
+    },
+    "deps": []
+  },
+  {
+    "uid": 182,
+    "path": "socket::Socket::multicast_ttl_v4::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1593,
+      "start_col": 22,
+      "end_line": 1593,
+      "end_col": 27
+    },
+    "deps": []
+  },
+  {
+    "uid": 183,
+    "path": "socket::Socket::multicast_ttl_v4::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1593,
+      "start_col": 22,
+      "end_line": 1593,
+      "end_col": 27
+    },
+    "deps": []
+  },
+  {
+    "uid": 184,
+    "path": "socket::Socket::multicast_loop_v4::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1566,
+      "start_col": 22,
+      "end_line": 1566,
+      "end_col": 31
+    },
+    "deps": []
+  },
+  {
+    "uid": 185,
+    "path": "socket::Socket::multicast_loop_v4::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1566,
+      "start_col": 22,
+      "end_line": 1566,
+      "end_col": 31
+    },
+    "deps": []
+  },
+  {
+    "uid": 186,
+    "path": "sys::setsockopt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1454,
+      "start_col": 1,
+      "end_line": 1459,
+      "end_col": 20
+    },
+    "deps": []
+  },
+  {
+    "uid": 187,
+    "path": "sys::setsockopt::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1468,
+      "start_col": 10,
+      "end_line": 1468,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 188,
+    "path": "sys::getsockopt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1436,
+      "start_col": 1,
+      "end_line": 1436,
+      "end_col": 91
+    },
+    "deps": []
+  },
+  {
+    "uid": 189,
+    "path": "sys::getsockopt::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1446,
+      "start_col": 10,
+      "end_line": 1446,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 190,
+    "path": "sys::setsockopt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1454,
+      "start_col": 1,
+      "end_line": 1459,
+      "end_col": 20
+    },
+    "deps": []
+  },
+  {
+    "uid": 191,
+    "path": "sys::setsockopt::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1468,
+      "start_col": 10,
+      "end_line": 1468,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 192,
+    "path": "sys::setsockopt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1454,
+      "start_col": 1,
+      "end_line": 1459,
+      "end_col": 20
+    },
+    "deps": []
+  },
+  {
+    "uid": 193,
+    "path": "sys::setsockopt::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1468,
+      "start_col": 10,
+      "end_line": 1468,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 194,
+    "path": "sys::setsockopt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1454,
+      "start_col": 1,
+      "end_line": 1459,
+      "end_col": 20
+    },
+    "deps": []
+  },
+  {
+    "uid": 195,
+    "path": "sys::setsockopt::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1468,
+      "start_col": 10,
+      "end_line": 1468,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 196,
+    "path": "socket::Socket::header_included_v4::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1225,
+      "start_col": 22,
+      "end_line": 1225,
+      "end_col": 32
+    },
+    "deps": []
+  },
+  {
+    "uid": 197,
+    "path": "socket::Socket::header_included_v4::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1225,
+      "start_col": 22,
+      "end_line": 1225,
+      "end_col": 32
+    },
+    "deps": []
+  },
+  {
+    "uid": 198,
+    "path": "socket::into_linger",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1188,
+      "start_col": 1,
+      "end_line": 1188,
+      "end_col": 64
+    },
+    "deps": []
+  },
+  {
+    "uid": 199,
+    "path": "socket::from_linger",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1180,
+      "start_col": 1,
+      "end_line": 1180,
+      "end_col": 62
+    },
+    "deps": []
+  },
+  {
+    "uid": 200,
+    "path": "socket::Socket::send_buffer_size::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1144,
+      "start_col": 22,
+      "end_line": 1144,
+      "end_col": 28
+    },
+    "deps": []
+  },
+  {
+    "uid": 201,
+    "path": "socket::Socket::send_buffer_size::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1144,
+      "start_col": 22,
+      "end_line": 1144,
+      "end_col": 28
+    },
+    "deps": []
+  },
+  {
+    "uid": 202,
+    "path": "socket::Socket::reuse_address::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1116,
+      "start_col": 22,
+      "end_line": 1116,
+      "end_col": 29
+    },
+    "deps": []
+  },
+  {
+    "uid": 203,
+    "path": "socket::Socket::reuse_address::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1116,
+      "start_col": 22,
+      "end_line": 1116,
+      "end_col": 29
+    },
+    "deps": []
+  },
+  {
+    "uid": 204,
+    "path": "socket::Socket::recv_buffer_size::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1073,
+      "start_col": 22,
+      "end_line": 1073,
+      "end_col": 28
+    },
+    "deps": []
+  },
+  {
+    "uid": 205,
+    "path": "socket::Socket::recv_buffer_size::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1073,
+      "start_col": 22,
+      "end_line": 1073,
+      "end_col": 28
+    },
+    "deps": []
+  },
+  {
+    "uid": 206,
+    "path": "socket::Socket::out_of_band_inline::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 979,
+      "start_col": 22,
+      "end_line": 979,
+      "end_col": 34
+    },
+    "deps": []
+  },
+  {
+    "uid": 207,
+    "path": "socket::Socket::out_of_band_inline::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 979,
+      "start_col": 22,
+      "end_line": 979,
+      "end_col": 34
+    },
+    "deps": []
+  },
+  {
+    "uid": 208,
+    "path": "sys::setsockopt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1454,
+      "start_col": 1,
+      "end_line": 1459,
+      "end_col": 20
+    },
+    "deps": []
+  },
+  {
+    "uid": 209,
+    "path": "sys::setsockopt::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1468,
+      "start_col": 10,
+      "end_line": 1468,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 210,
+    "path": "sys::getsockopt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1436,
+      "start_col": 1,
+      "end_line": 1436,
+      "end_col": 91
+    },
+    "deps": []
+  },
+  {
+    "uid": 211,
+    "path": "sys::getsockopt::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1446,
+      "start_col": 10,
+      "end_line": 1446,
+      "end_col": 13
+    },
+    "deps": []
+  },
+  {
+    "uid": 212,
+    "path": "socket::Socket::keepalive::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 921,
+      "start_col": 22,
+      "end_line": 921,
+      "end_col": 33
+    },
+    "deps": []
+  },
+  {
+    "uid": 213,
+    "path": "socket::Socket::keepalive::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 921,
+      "start_col": 22,
+      "end_line": 921,
+      "end_col": 33
+    },
+    "deps": []
+  },
+  {
+    "uid": 214,
+    "path": "socket::Socket::broadcast::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 881,
+      "start_col": 22,
+      "end_line": 881,
+      "end_col": 33
+    },
+    "deps": []
+  },
+  {
+    "uid": 215,
+    "path": "socket::Socket::broadcast::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 881,
+      "start_col": 22,
+      "end_line": 881,
+      "end_col": 33
+    },
+    "deps": []
+  },
+  {
+    "uid": 216,
+    "path": "socket::set_common_type",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 747,
+      "start_col": 1,
+      "end_line": 747,
+      "end_col": 43
+    },
+    "deps": []
+  },
+  {
+    "uid": 217,
+    "path": "socket::Socket::pair_raw::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 158,
+      "start_col": 43,
+      "end_line": 158,
+      "end_col": 46
+    },
+    "deps": []
+  },
+  {
+    "uid": 218,
+    "path": "socket::Socket::pair_raw::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 158,
+      "start_col": 43,
+      "end_line": 158,
+      "end_col": 46
+    },
+    "deps": []
+  },
+  {
+    "uid": 219,
+    "path": "socket::Socket::new_raw::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 125,
+      "start_col": 43,
+      "end_line": 125,
+      "end_col": 46
+    },
+    "deps": []
+  },
+  {
+    "uid": 220,
+    "path": "socket::Socket::new_raw::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 125,
+      "start_col": 43,
+      "end_line": 125,
+      "end_col": 46
+    },
+    "deps": []
+  },
+  {
+    "uid": 221,
+    "path": "<sockaddr::SockAddr as std::fmt::Debug>::fmt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 459,
+      "start_col": 5,
+      "end_line": 459,
+      "end_col": 63
+    },
+    "deps": []
+  },
+  {
+    "uid": 222,
+    "path": "<sockaddr::SockAddr as std::convert::From<std::net::SocketAddr>>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 369,
+      "start_col": 5,
+      "end_line": 369,
+      "end_col": 42
+    },
+    "deps": []
+  },
+  {
+    "uid": 223,
+    "path": "sockaddr::SockAddr::is_ipv6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 288,
+      "start_col": 5,
+      "end_line": 288,
+      "end_col": 40
+    },
+    "deps": []
+  },
+  {
+    "uid": 224,
+    "path": "sockaddr::SockAddr::is_ipv4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 282,
+      "start_col": 5,
+      "end_line": 282,
+      "end_col": 40
+    },
+    "deps": []
+  },
+  {
+    "uid": 225,
+    "path": "sockaddr::SockAddr::as_storage",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 275,
+      "start_col": 5,
+      "end_line": 275,
+      "end_col": 53
+    },
+    "deps": []
+  },
+  {
+    "uid": 226,
+    "path": "sockaddr::SockAddr::domain",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 255,
+      "start_col": 5,
+      "end_line": 255,
+      "end_col": 41
+    },
+    "deps": []
+  },
+  {
+    "uid": 227,
+    "path": "sockaddr::SockAddr::family",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 250,
+      "start_col": 5,
+      "end_line": 250,
+      "end_col": 46
+    },
+    "deps": []
+  },
+  {
+    "uid": 228,
+    "path": "sockaddr::SockAddr::set_length",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 245,
+      "start_col": 5,
+      "end_line": 245,
+      "end_col": 59
+    },
+    "deps": []
+  },
+  {
+    "uid": 229,
+    "path": "<sockaddr::SockAddrStorage as std::fmt::Debug>::fmt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 82,
+      "start_col": 5,
+      "end_line": 82,
+      "end_col": 71
+    },
+    "deps": []
+  },
+  {
+    "uid": 230,
+    "path": "sockaddr::SockAddrStorage::view_as",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 73,
+      "start_col": 5,
+      "end_line": 73,
+      "end_col": 50
+    },
+    "deps": []
+  },
+  {
+    "uid": 231,
+    "path": "sockaddr::SockAddrStorage::size_of",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 46,
+      "start_col": 5,
+      "end_line": 46,
+      "end_col": 39
+    },
+    "deps": []
+  },
+  {
+    "uid": 232,
+    "path": "socket::Socket::into_raw",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 100,
+      "start_col": 5,
+      "end_line": 100,
+      "end_col": 51
+    },
+    "deps": [
+      14
+    ]
+  },
+  {
+    "uid": 233,
+    "path": "socket::Socket::from_raw",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 86,
+      "start_col": 5,
+      "end_line": 86,
+      "end_col": 58
+    },
+    "deps": [
+      15
+    ]
+  },
+  {
+    "uid": 234,
+    "path": "MsgHdrMut::<'addr, 'bufs, 'control>::flags",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 732,
+      "start_col": 5,
+      "end_line": 732,
+      "end_col": 37
+    },
+    "deps": [
+      21
+    ]
+  },
+  {
+    "uid": 235,
+    "path": "MsgHdrMut::<'addr, 'bufs, 'control>::flags",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 732,
+      "start_col": 5,
+      "end_line": 732,
+      "end_col": 37
+    },
+    "deps": [
+      21
+    ]
+  },
+  {
+    "uid": 236,
+    "path": "sys::recv_from_vectored::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1212,
+      "start_col": 28,
+      "end_line": 1212,
+      "end_col": 42
+    },
+    "deps": [
+      22
+    ]
+  },
+  {
+    "uid": 237,
+    "path": "sys::recv_from_vectored::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1212,
+      "start_col": 28,
+      "end_line": 1212,
+      "end_col": 42
+    },
+    "deps": [
+      22
+    ]
+  },
+  {
+    "uid": 238,
+    "path": "MsgHdrMut::<'addr, 'bufs, 'control>::with_buffers",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 715,
+      "start_col": 5,
+      "end_line": 715,
+      "end_col": 83
+    },
+    "deps": [
+      24
+    ]
+  },
+  {
+    "uid": 239,
+    "path": "MsgHdrMut::<'addr, 'bufs, 'control>::with_buffers",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 715,
+      "start_col": 5,
+      "end_line": 715,
+      "end_col": 83
+    },
+    "deps": [
+      24
+    ]
+  },
+  {
+    "uid": 240,
+    "path": "MsgHdr::<'addr, 'bufs, 'control>::with_buffers",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 636,
+      "start_col": 5,
+      "end_line": 636,
+      "end_col": 70
+    },
+    "deps": [
+      24
+    ]
+  },
+  {
+    "uid": 241,
+    "path": "MsgHdr::<'addr, 'bufs, 'control>::with_buffers",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 636,
+      "start_col": 5,
+      "end_line": 636,
+      "end_col": 70
+    },
+    "deps": [
+      24
+    ]
+  },
+  {
+    "uid": 242,
+    "path": "socket::Socket::as_raw",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 96,
+      "start_col": 5,
+      "end_line": 96,
+      "end_col": 50
+    },
+    "deps": [
+      26
+    ]
+  },
+  {
+    "uid": 243,
+    "path": "MsgHdrMut::<'addr, 'bufs, 'control>::control_len",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 741,
+      "start_col": 5,
+      "end_line": 741,
+      "end_col": 39
+    },
+    "deps": [
+      35
+    ]
+  },
+  {
+    "uid": 244,
+    "path": "MsgHdrMut::<'addr, 'bufs, 'control>::with_control",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 725,
+      "start_col": 5,
+      "end_line": 725,
+      "end_col": 80
+    },
+    "deps": [
+      36
+    ]
+  },
+  {
+    "uid": 245,
+    "path": "MsgHdr::<'addr, 'bufs, 'control>::with_control",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 647,
+      "start_col": 5,
+      "end_line": 647,
+      "end_col": 63
+    },
+    "deps": [
+      36
+    ]
+  },
+  {
+    "uid": 246,
+    "path": "MsgHdrMut::<'addr, 'bufs, 'control>::with_addr",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 705,
+      "start_col": 5,
+      "end_line": 705,
+      "end_col": 66
+    },
+    "deps": [
+      37,
+      38,
+      39
+    ]
+  },
+  {
+    "uid": 247,
+    "path": "MsgHdr::<'addr, 'bufs, 'control>::with_flags",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 657,
+      "start_col": 5,
+      "end_line": 657,
+      "end_col": 59
+    },
+    "deps": [
+      42
+    ]
+  },
+  {
+    "uid": 248,
+    "path": "MsgHdr::<'addr, 'bufs, 'control>::with_addr",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 624,
+      "start_col": 5,
+      "end_line": 624,
+      "end_col": 62
+    },
+    "deps": [
+      37,
+      39,
+      43
+    ]
+  },
+  {
+    "uid": 249,
+    "path": "MsgHdr::<'addr, 'bufs, 'control>::with_addr",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 624,
+      "start_col": 5,
+      "end_line": 624,
+      "end_col": 62
+    },
+    "deps": [
+      37,
+      39,
+      43
+    ]
+  },
+  {
+    "uid": 250,
+    "path": "sys::send_to",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1253,
+      "start_col": 1,
+      "end_line": 1258,
+      "end_col": 23
+    },
+    "deps": [
+      39,
+      43
+    ]
+  },
+  {
+    "uid": 251,
+    "path": "sys::connect",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1032,
+      "start_col": 1,
+      "end_line": 1032,
+      "end_col": 72
+    },
+    "deps": [
+      39,
+      43
+    ]
+  },
+  {
+    "uid": 252,
+    "path": "sys::bind",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1028,
+      "start_col": 1,
+      "end_line": 1028,
+      "end_col": 69
+    },
+    "deps": [
+      39,
+      43
+    ]
+  },
+  {
+    "uid": 253,
+    "path": "sys::<impl sockaddr::SockAddr>::as_sockaddr_un::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 927,
+      "start_col": 29,
+      "end_line": 927,
+      "end_col": 31
+    },
+    "deps": [
+      43
+    ]
+  },
+  {
+    "uid": 254,
+    "path": "sys::<impl sockaddr::SockAddr>::as_sockaddr_un::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 927,
+      "start_col": 29,
+      "end_line": 927,
+      "end_col": 31
+    },
+    "deps": [
+      43
+    ]
+  },
+  {
+    "uid": 255,
+    "path": "sockaddr::SockAddr::as_bytes",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 360,
+      "start_col": 5,
+      "end_line": 360,
+      "end_col": 32
+    },
+    "deps": [
+      43
+    ]
+  },
+  {
+    "uid": 256,
+    "path": "<MaybeUninitSlice<'a> as std::ops::DerefMut>::deref_mut",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 441,
+      "start_col": 5,
+      "end_line": 441,
+      "end_col": 54
+    },
+    "deps": [
+      49
+    ]
+  },
+  {
+    "uid": 257,
+    "path": "<MaybeUninitSlice<'a> as std::ops::Deref>::deref",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 435,
+      "start_col": 5,
+      "end_line": 435,
+      "end_col": 42
+    },
+    "deps": [
+      50
+    ]
+  },
+  {
+    "uid": 258,
+    "path": "<MaybeUninitSlice<'a> as std::fmt::Debug>::fmt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 416,
+      "start_col": 5,
+      "end_line": 416,
+      "end_col": 63
+    },
+    "deps": [
+      50
+    ]
+  },
+  {
+    "uid": 259,
+    "path": "MaybeUninitSlice::<'a>::new",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 427,
+      "start_col": 5,
+      "end_line": 427,
+      "end_col": 71
+    },
+    "deps": [
+      51
+    ]
+  },
+  {
+    "uid": 260,
+    "path": "sys::tcp_keepalive_time",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1331,
+      "start_col": 1,
+      "end_line": 1331,
+      "end_col": 72
+    },
+    "deps": [
+      64
+    ]
+  },
+  {
+    "uid": 261,
+    "path": "sys::fcntl_remove",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1424,
+      "start_col": 1,
+      "end_line": 1424,
+      "end_col": 94
+    },
+    "deps": [
+      77
+    ]
+  },
+  {
+    "uid": 262,
+    "path": "sys::fcntl_add",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1411,
+      "start_col": 1,
+      "end_line": 1411,
+      "end_col": 91
+    },
+    "deps": [
+      77
+    ]
+  },
+  {
+    "uid": 263,
+    "path": "sys::nonblocking",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1109,
+      "start_col": 1,
+      "end_line": 1109,
+      "end_col": 61
+    },
+    "deps": [
+      77
+    ]
+  },
+  {
+    "uid": 264,
+    "path": "sys::to_mreqn",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1509,
+      "start_col": 1,
+      "end_line": 1512,
+      "end_col": 20
+    },
+    "deps": [
+      79
+    ]
+  },
+  {
+    "uid": 265,
+    "path": "<sockaddr::SockAddr as std::convert::From<std::net::SocketAddrV4>>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 378,
+      "start_col": 5,
+      "end_line": 378,
+      "end_col": 44
+    },
+    "deps": [
+      79
+    ]
+  },
+  {
+    "uid": 266,
+    "path": "<sockaddr::SockAddr as std::convert::From<std::net::SocketAddrV6>>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 415,
+      "start_col": 5,
+      "end_line": 415,
+      "end_col": 44
+    },
+    "deps": [
+      81
+    ]
+  },
+  {
+    "uid": 267,
+    "path": "sockaddr::SockAddr::as_socket",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 311,
+      "start_col": 5,
+      "end_line": 311,
+      "end_col": 50
+    },
+    "deps": [
+      80,
+      82
+    ]
+  },
+  {
+    "uid": 268,
+    "path": "sys::set_tcp_keepalive",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1339,
+      "start_col": 1,
+      "end_line": 1339,
+      "end_col": 91
+    },
+    "deps": [
+      60,
+      89
+    ]
+  },
+  {
+    "uid": 269,
+    "path": "sys::set_timeout_opt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1302,
+      "start_col": 1,
+      "end_line": 1307,
+      "end_col": 20
+    },
+    "deps": [
+      92,
+      93
+    ]
+  },
+  {
+    "uid": 270,
+    "path": "sys::timeout_opt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1287,
+      "start_col": 1,
+      "end_line": 1287,
+      "end_col": 97
+    },
+    "deps": [
+      96
+    ]
+  },
+  {
+    "uid": 271,
+    "path": "sockaddr::SockAddr::try_init::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 209,
+      "start_col": 42,
+      "end_line": 209,
+      "end_col": 47
+    },
+    "deps": [
+      108
+    ]
+  },
+  {
+    "uid": 272,
+    "path": "sockaddr::SockAddr::try_init::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 209,
+      "start_col": 42,
+      "end_line": 209,
+      "end_col": 47
+    },
+    "deps": [
+      108
+    ]
+  },
+  {
+    "uid": 273,
+    "path": "sockaddr::SockAddr::try_init::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 209,
+      "start_col": 42,
+      "end_line": 209,
+      "end_col": 47
+    },
+    "deps": [
+      108
+    ]
+  },
+  {
+    "uid": 274,
+    "path": "sockaddr::SockAddr::try_init::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 209,
+      "start_col": 42,
+      "end_line": 209,
+      "end_col": 47
+    },
+    "deps": [
+      108
+    ]
+  },
+  {
+    "uid": 275,
+    "path": "sockaddr::SockAddr::try_init::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 209,
+      "start_col": 42,
+      "end_line": 209,
+      "end_col": 47
+    },
+    "deps": [
+      108
+    ]
+  },
+  {
+    "uid": 276,
+    "path": "sockaddr::SockAddr::try_init::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 209,
+      "start_col": 42,
+      "end_line": 209,
+      "end_col": 47
+    },
+    "deps": [
+      108
+    ]
+  },
+  {
+    "uid": 277,
+    "path": "sockaddr::SockAddr::try_init",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 197,
+      "start_col": 5,
+      "end_line": 199,
+      "end_col": 74
+    },
+    "deps": [
+      109
+    ]
+  },
+  {
+    "uid": 278,
+    "path": "sockaddr::SockAddr::try_init",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 197,
+      "start_col": 5,
+      "end_line": 199,
+      "end_col": 74
+    },
+    "deps": [
+      109,
+      110
+    ]
+  },
+  {
+    "uid": 279,
+    "path": "sockaddr::SockAddr::try_init",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 197,
+      "start_col": 5,
+      "end_line": 199,
+      "end_col": 74
+    },
+    "deps": [
+      109,
+      122
+    ]
+  },
+  {
+    "uid": 280,
+    "path": "sockaddr::SockAddr::try_init",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 197,
+      "start_col": 5,
+      "end_line": 199,
+      "end_col": 74
+    },
+    "deps": [
+      109,
+      126
+    ]
+  },
+  {
+    "uid": 281,
+    "path": "sockaddr::SockAddr::try_init",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 197,
+      "start_col": 5,
+      "end_line": 199,
+      "end_col": 74
+    },
+    "deps": [
+      109,
+      128
+    ]
+  },
+  {
+    "uid": 282,
+    "path": "socket::Socket::pair_raw",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 153,
+      "start_col": 5,
+      "end_line": 157,
+      "end_col": 38
+    },
+    "deps": [
+      137
+    ]
+  },
+  {
+    "uid": 283,
+    "path": "socket::Socket::new_raw",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 124,
+      "start_col": 5,
+      "end_line": 124,
+      "end_col": 95
+    },
+    "deps": [
+      139
+    ]
+  },
+  {
+    "uid": 284,
+    "path": "sys::<impl sockaddr::SockAddr>::is_unnamed::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 912,
+      "start_col": 18,
+      "end_line": 912,
+      "end_col": 27
+    },
+    "deps": [
+      39,
+      141
+    ]
+  },
+  {
+    "uid": 285,
+    "path": "sys::<impl sockaddr::SockAddr>::as_pathname::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 975,
+      "start_col": 40,
+      "end_line": 975,
+      "end_col": 49
+    },
+    "deps": [
+      39,
+      141
+    ]
+  },
+  {
+    "uid": 286,
+    "path": "sys::<impl sockaddr::SockAddr>::as_pathname::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 975,
+      "start_col": 40,
+      "end_line": 975,
+      "end_col": 49
+    },
+    "deps": [
+      39,
+      141
+    ]
+  },
+  {
+    "uid": 287,
+    "path": "sys::<impl sockaddr::SockAddr>::is_unnamed::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 912,
+      "start_col": 18,
+      "end_line": 912,
+      "end_col": 27
+    },
+    "deps": [
+      39,
+      141
+    ]
+  },
+  {
+    "uid": 288,
+    "path": "sys::<impl sockaddr::SockAddr>::as_sockaddr_un",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 926,
+      "start_col": 5,
+      "end_line": 926,
+      "end_col": 70
+    },
+    "deps": [
+      142
+    ]
+  },
+  {
+    "uid": 289,
+    "path": "sys::unix_sockaddr",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 742,
+      "start_col": 1,
+      "end_line": 742,
+      "end_col": 65
+    },
+    "deps": [
+      108,
+      109,
+      141,
+      143
+    ]
+  },
+  {
+    "uid": 290,
+    "path": "sys::<impl std::fmt::Debug for RecvFlags>::fmt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 684,
+      "start_col": 5,
+      "end_line": 684,
+      "end_col": 71
+    },
+    "deps": [
+      52,
+      147,
+      148
+    ]
+  },
+  {
+    "uid": 291,
+    "path": "sys::<impl std::os::fd::IntoRawFd for socket::Socket>::into_raw_fd",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 3111,
+      "start_col": 5,
+      "end_line": 3111,
+      "end_col": 34
+    },
+    "deps": [
+      232
+    ]
+  },
+  {
+    "uid": 292,
+    "path": "sys::<impl std::convert::From<socket::Socket> for std::os::fd::OwnedFd>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 3104,
+      "start_col": 5,
+      "end_line": 3104,
+      "end_col": 44
+    },
+    "deps": [
+      232
+    ]
+  },
+  {
+    "uid": 293,
+    "path": "sys::<impl std::os::fd::FromRawFd for socket::Socket>::from_raw_fd",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 3124,
+      "start_col": 5,
+      "end_line": 3124,
+      "end_col": 54
+    },
+    "deps": [
+      233
+    ]
+  },
+  {
+    "uid": 294,
+    "path": "socket::Socket::accept_raw::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 302,
+      "start_col": 40,
+      "end_line": 302,
+      "end_col": 55
+    },
+    "deps": [
+      233
+    ]
+  },
+  {
+    "uid": 295,
+    "path": "socket::Socket::accept_raw::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 302,
+      "start_col": 40,
+      "end_line": 302,
+      "end_col": 55
+    },
+    "deps": [
+      233
+    ]
+  },
+  {
+    "uid": 296,
+    "path": "socket::Socket::pair_raw::{closure#1}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 160,
+      "start_col": 18,
+      "end_line": 160,
+      "end_col": 26
+    },
+    "deps": [
+      233
+    ]
+  },
+  {
+    "uid": 297,
+    "path": "socket::Socket::pair_raw::{closure#1}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 160,
+      "start_col": 18,
+      "end_line": 160,
+      "end_col": 26
+    },
+    "deps": [
+      233
+    ]
+  },
+  {
+    "uid": 298,
+    "path": "sockaddr::SockAddr::try_init",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 197,
+      "start_col": 5,
+      "end_line": 199,
+      "end_col": 74
+    },
+    "deps": [
+      237,
+      109
+    ]
+  },
+  {
+    "uid": 299,
+    "path": "sys::recv_vectored",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1192,
+      "start_col": 1,
+      "end_line": 1196,
+      "end_col": 36
+    },
+    "deps": [
+      234,
+      22,
+      238,
+      25
+    ]
+  },
+  {
+    "uid": 300,
+    "path": "sys::send_vectored",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1244,
+      "start_col": 1,
+      "end_line": 1248,
+      "end_col": 23
+    },
+    "deps": [
+      99,
+      241,
+      101
+    ]
+  },
+  {
+    "uid": 301,
+    "path": "socket::Socket::recv_with_flags",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 439,
+      "start_col": 5,
+      "end_line": 443,
+      "end_col": 27
+    },
+    "deps": [
+      242,
+      27
+    ]
+  },
+  {
+    "uid": 302,
+    "path": "sys::<impl std::os::fd::AsRawFd for socket::Socket>::as_raw_fd",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 3098,
+      "start_col": 5,
+      "end_line": 3098,
+      "end_col": 33
+    },
+    "deps": [
+      242
+    ]
+  },
+  {
+    "uid": 303,
+    "path": "sys::<impl std::os::fd::AsFd for socket::Socket>::as_fd",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 3091,
+      "start_col": 5,
+      "end_line": 3091,
+      "end_col": 38
+    },
+    "deps": [
+      242
+    ]
+  },
+  {
+    "uid": 304,
+    "path": "sys::<impl socket::Socket>::set_tclass_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 2750,
+      "start_col": 5,
+      "end_line": 2750,
+      "end_col": 63
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 305,
+    "path": "sys::<impl socket::Socket>::tclass_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 2724,
+      "start_col": 5,
+      "end_line": 2724,
+      "end_col": 47
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 306,
+    "path": "sys::<impl socket::Socket>::_sendfile",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 2503,
+      "start_col": 5,
+      "end_line": 2508,
+      "end_col": 27
+    },
+    "deps": [
+      242
+    ]
+  },
+  {
+    "uid": 307,
+    "path": "sys::<impl socket::Socket>::set_reuse_port",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 2313,
+      "start_col": 5,
+      "end_line": 2313,
+      "end_col": 64
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 308,
+    "path": "sys::<impl socket::Socket>::reuse_port",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 2291,
+      "start_col": 5,
+      "end_line": 2291,
+      "end_col": 49
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 309,
+    "path": "sys::<impl socket::Socket>::device_index_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 2226,
+      "start_col": 5,
+      "end_line": 2226,
+      "end_col": 68
+    },
+    "deps": [
+      242,
+      70
+    ]
+  },
+  {
+    "uid": 310,
+    "path": "sys::<impl socket::Socket>::device_index_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 2186,
+      "start_col": 5,
+      "end_line": 2186,
+      "end_col": 68
+    },
+    "deps": [
+      242,
+      70
+    ]
+  },
+  {
+    "uid": 311,
+    "path": "sys::<impl socket::Socket>::bind_device_by_index_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 2140,
+      "start_col": 5,
+      "end_line": 2140,
+      "end_col": 91
+    },
+    "deps": [
+      242,
+      72
+    ]
+  },
+  {
+    "uid": 312,
+    "path": "sys::<impl socket::Socket>::bind_device_by_index_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 2089,
+      "start_col": 5,
+      "end_line": 2089,
+      "end_col": 91
+    },
+    "deps": [
+      242,
+      72
+    ]
+  },
+  {
+    "uid": 313,
+    "path": "sys::<impl socket::Socket>::set_tcp_mss",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1735,
+      "start_col": 5,
+      "end_line": 1735,
+      "end_col": 58
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 314,
+    "path": "sys::<impl socket::Socket>::tcp_mss",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1723,
+      "start_col": 5,
+      "end_line": 1723,
+      "end_col": 45
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 315,
+    "path": "sys::<impl socket::Socket>::_set_nosigpipe",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1706,
+      "start_col": 5,
+      "end_line": 1706,
+      "end_col": 75
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 316,
+    "path": "socket::Socket::take_error",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 905,
+      "start_col": 5,
+      "end_line": 905,
+      "end_col": 62
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 317,
+    "path": "socket::Socket::send_with_flags",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 655,
+      "start_col": 5,
+      "end_line": 655,
+      "end_col": 81
+    },
+    "deps": [
+      242,
+      105
+    ]
+  },
+  {
+    "uid": 318,
+    "path": "socket::Socket::set_tcp_nodelay",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2431,
+      "start_col": 5,
+      "end_line": 2431,
+      "end_col": 67
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 319,
+    "path": "socket::Socket::tcp_nodelay",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2417,
+      "start_col": 5,
+      "end_line": 2417,
+      "end_col": 50
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 320,
+    "path": "socket::Socket::set_keepalive",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 928,
+      "start_col": 5,
+      "end_line": 928,
+      "end_col": 67
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 321,
+    "path": "socket::Socket::tcp_keepalive_retries",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2362,
+      "start_col": 5,
+      "end_line": 2362,
+      "end_col": 59
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 322,
+    "path": "socket::Socket::tcp_keepalive_interval",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2328,
+      "start_col": 5,
+      "end_line": 2328,
+      "end_col": 65
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 323,
+    "path": "socket::Socket::set_recv_hoplimit_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2258,
+      "start_col": 5,
+      "end_line": 2258,
+      "end_col": 78
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 324,
+    "path": "socket::Socket::recv_hoplimit_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2227,
+      "start_col": 5,
+      "end_line": 2227,
+      "end_col": 55
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 325,
+    "path": "socket::Socket::set_recv_tclass_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2191,
+      "start_col": 5,
+      "end_line": 2191,
+      "end_col": 74
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 326,
+    "path": "socket::Socket::recv_tclass_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2163,
+      "start_col": 5,
+      "end_line": 2163,
+      "end_col": 53
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 327,
+    "path": "socket::Socket::set_only_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2131,
+      "start_col": 5,
+      "end_line": 2131,
+      "end_col": 63
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 328,
+    "path": "socket::Socket::only_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2116,
+      "start_col": 5,
+      "end_line": 2116,
+      "end_col": 46
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 329,
+    "path": "socket::Socket::set_unicast_hops_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2071,
+      "start_col": 5,
+      "end_line": 2071,
+      "end_col": 67
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 330,
+    "path": "socket::Socket::unicast_hops_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2061,
+      "start_col": 5,
+      "end_line": 2061,
+      "end_col": 53
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 331,
+    "path": "socket::Socket::set_multicast_loop_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2047,
+      "start_col": 5,
+      "end_line": 2047,
+      "end_col": 73
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 332,
+    "path": "socket::Socket::multicast_loop_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2036,
+      "start_col": 5,
+      "end_line": 2036,
+      "end_col": 56
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 333,
+    "path": "socket::Socket::set_multicast_if_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2020,
+      "start_col": 5,
+      "end_line": 2020,
+      "end_col": 72
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 334,
+    "path": "socket::Socket::multicast_if_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2007,
+      "start_col": 5,
+      "end_line": 2007,
+      "end_col": 53
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 335,
+    "path": "socket::Socket::set_multicast_hops_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1955,
+      "start_col": 5,
+      "end_line": 1955,
+      "end_col": 69
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 336,
+    "path": "socket::Socket::multicast_hops_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1942,
+      "start_col": 5,
+      "end_line": 1942,
+      "end_col": 55
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 337,
+    "path": "socket::Socket::leave_multicast_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1920,
+      "start_col": 5,
+      "end_line": 1920,
+      "end_col": 93
+    },
+    "deps": [
+      242,
+      81,
+      172
+    ]
+  },
+  {
+    "uid": 338,
+    "path": "socket::Socket::join_multicast_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1896,
+      "start_col": 5,
+      "end_line": 1896,
+      "end_col": 92
+    },
+    "deps": [
+      242,
+      81,
+      172
+    ]
+  },
+  {
+    "uid": 339,
+    "path": "socket::Socket::set_header_included_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1834,
+      "start_col": 5,
+      "end_line": 1834,
+      "end_col": 75
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 340,
+    "path": "socket::Socket::header_included_v6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1801,
+      "start_col": 5,
+      "end_line": 1801,
+      "end_col": 57
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 341,
+    "path": "socket::Socket::recv_tos_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1754,
+      "start_col": 5,
+      "end_line": 1754,
+      "end_col": 50
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 342,
+    "path": "socket::Socket::set_recv_tos_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1719,
+      "start_col": 5,
+      "end_line": 1719,
+      "end_col": 68
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 343,
+    "path": "socket::Socket::tos_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1689,
+      "start_col": 5,
+      "end_line": 1689,
+      "end_col": 44
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 344,
+    "path": "socket::Socket::set_tos_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1670,
+      "start_col": 5,
+      "end_line": 1670,
+      "end_col": 57
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 345,
+    "path": "socket::Socket::set_ttl_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1630,
+      "start_col": 5,
+      "end_line": 1630,
+      "end_col": 57
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 346,
+    "path": "socket::Socket::ttl_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1620,
+      "start_col": 5,
+      "end_line": 1620,
+      "end_col": 44
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 347,
+    "path": "socket::Socket::set_multicast_ttl_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1604,
+      "start_col": 5,
+      "end_line": 1604,
+      "end_col": 67
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 348,
+    "path": "socket::Socket::multicast_ttl_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1590,
+      "start_col": 5,
+      "end_line": 1590,
+      "end_col": 54
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 349,
+    "path": "socket::Socket::set_multicast_loop_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1574,
+      "start_col": 5,
+      "end_line": 1574,
+      "end_col": 73
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 350,
+    "path": "socket::Socket::multicast_loop_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1563,
+      "start_col": 5,
+      "end_line": 1563,
+      "end_col": 56
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 351,
+    "path": "socket::Socket::set_multicast_if_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1546,
+      "start_col": 5,
+      "end_line": 1546,
+      "end_col": 78
+    },
+    "deps": [
+      242,
+      79,
+      186
+    ]
+  },
+  {
+    "uid": 352,
+    "path": "socket::Socket::multicast_if_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1536,
+      "start_col": 5,
+      "end_line": 1536,
+      "end_col": 58
+    },
+    "deps": [
+      242,
+      188
+    ]
+  },
+  {
+    "uid": 353,
+    "path": "socket::Socket::leave_ssm_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1474,
+      "start_col": 5,
+      "end_line": 1479,
+      "end_col": 24
+    },
+    "deps": [
+      242,
+      79,
+      190
+    ]
+  },
+  {
+    "uid": 354,
+    "path": "socket::Socket::join_ssm_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1434,
+      "start_col": 5,
+      "end_line": 1439,
+      "end_col": 24
+    },
+    "deps": [
+      242,
+      79,
+      190
+    ]
+  },
+  {
+    "uid": 355,
+    "path": "socket::Socket::leave_multicast_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1325,
+      "start_col": 5,
+      "end_line": 1325,
+      "end_col": 99
+    },
+    "deps": [
+      242,
+      79,
+      194
+    ]
+  },
+  {
+    "uid": 356,
+    "path": "socket::Socket::join_multicast_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1312,
+      "start_col": 5,
+      "end_line": 1312,
+      "end_col": 98
+    },
+    "deps": [
+      242,
+      79,
+      194
+    ]
+  },
+  {
+    "uid": 357,
+    "path": "socket::Socket::set_header_included_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1254,
+      "start_col": 5,
+      "end_line": 1254,
+      "end_col": 75
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 358,
+    "path": "socket::Socket::header_included_v4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1222,
+      "start_col": 5,
+      "end_line": 1222,
+      "end_col": 57
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 359,
+    "path": "socket::Socket::set_send_buffer_size",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1152,
+      "start_col": 5,
+      "end_line": 1152,
+      "end_col": 70
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 360,
+    "path": "socket::Socket::send_buffer_size",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1141,
+      "start_col": 5,
+      "end_line": 1141,
+      "end_col": 56
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 361,
+    "path": "socket::Socket::set_reuse_address",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1125,
+      "start_col": 5,
+      "end_line": 1125,
+      "end_col": 67
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 362,
+    "path": "socket::Socket::reuse_address",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1113,
+      "start_col": 5,
+      "end_line": 1113,
+      "end_col": 52
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 363,
+    "path": "socket::Socket::set_recv_buffer_size",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1081,
+      "start_col": 5,
+      "end_line": 1081,
+      "end_col": 70
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 364,
+    "path": "socket::Socket::recv_buffer_size",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1070,
+      "start_col": 5,
+      "end_line": 1070,
+      "end_col": 56
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 365,
+    "path": "socket::Socket::set_out_of_band_inline",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 990,
+      "start_col": 5,
+      "end_line": 990,
+      "end_col": 77
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 366,
+    "path": "socket::Socket::out_of_band_inline",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 976,
+      "start_col": 5,
+      "end_line": 976,
+      "end_col": 57
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 367,
+    "path": "socket::Socket::set_linger",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 965,
+      "start_col": 5,
+      "end_line": 965,
+      "end_col": 73
+    },
+    "deps": [
+      242,
+      198,
+      208
+    ]
+  },
+  {
+    "uid": 368,
+    "path": "socket::Socket::linger",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 944,
+      "start_col": 5,
+      "end_line": 944,
+      "end_col": 57
+    },
+    "deps": [
+      242,
+      210
+    ]
+  },
+  {
+    "uid": 369,
+    "path": "socket::Socket::keepalive",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 918,
+      "start_col": 5,
+      "end_line": 918,
+      "end_col": 48
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 370,
+    "path": "socket::Socket::set_broadcast",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 889,
+      "start_col": 5,
+      "end_line": 889,
+      "end_col": 67
+    },
+    "deps": [
+      242,
+      60
+    ]
+  },
+  {
+    "uid": 371,
+    "path": "socket::Socket::broadcast",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 878,
+      "start_col": 5,
+      "end_line": 878,
+      "end_col": 48
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 372,
+    "path": "socket::Socket::sendmsg",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 739,
+      "start_col": 5,
+      "end_line": 739,
+      "end_col": 92
+    },
+    "deps": [
+      242,
+      99
+    ]
+  },
+  {
+    "uid": 373,
+    "path": "socket::Socket::recvmsg",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 636,
+      "start_col": 5,
+      "end_line": 636,
+      "end_col": 99
+    },
+    "deps": [
+      22,
+      242
+    ]
+  },
+  {
+    "uid": 374,
+    "path": "socket::Socket::shutdown",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 393,
+      "start_col": 5,
+      "end_line": 393,
+      "end_col": 60
+    },
+    "deps": [
+      242,
+      116
+    ]
+  },
+  {
+    "uid": 375,
+    "path": "socket::Socket::try_clone",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 356,
+      "start_col": 5,
+      "end_line": 356,
+      "end_col": 50
+    },
+    "deps": [
+      242,
+      118
+    ]
+  },
+  {
+    "uid": 376,
+    "path": "socket::Socket::r#type",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 338,
+      "start_col": 5,
+      "end_line": 338,
+      "end_col": 45
+    },
+    "deps": [
+      242,
+      64
+    ]
+  },
+  {
+    "uid": 377,
+    "path": "socket::Socket::listen",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 240,
+      "start_col": 5,
+      "end_line": 240,
+      "end_col": 59
+    },
+    "deps": [
+      242,
+      130
+    ]
+  },
+  {
+    "uid": 378,
+    "path": "sys::send_to_vectored",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1271,
+      "start_col": 1,
+      "end_line": 1276,
+      "end_col": 23
+    },
+    "deps": [
+      99,
+      241,
+      249,
+      101
+    ]
+  },
+  {
+    "uid": 379,
+    "path": "socket::Socket::send_to_with_flags",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 705,
+      "start_col": 5,
+      "end_line": 710,
+      "end_col": 27
+    },
+    "deps": [
+      242,
+      250
+    ]
+  },
+  {
+    "uid": 380,
+    "path": "socket::Socket::connect",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 192,
+      "start_col": 5,
+      "end_line": 192,
+      "end_col": 64
+    },
+    "deps": [
+      242,
+      251
+    ]
+  },
+  {
+    "uid": 381,
+    "path": "socket::Socket::bind",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 168,
+      "start_col": 5,
+      "end_line": 168,
+      "end_col": 61
+    },
+    "deps": [
+      242,
+      252
+    ]
+  },
+  {
+    "uid": 382,
+    "path": "<sockaddr::SockAddr as std::hash::Hash>::hash",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 492,
+      "start_col": 5,
+      "end_line": 492,
+      "end_col": 56
+    },
+    "deps": [
+      255
+    ]
+  },
+  {
+    "uid": 383,
+    "path": "<sockaddr::SockAddr as std::cmp::PartialEq>::eq",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 484,
+      "start_col": 5,
+      "end_line": 484,
+      "end_col": 39
+    },
+    "deps": [
+      255
+    ]
+  },
+  {
+    "uid": 384,
+    "path": "socket::Socket::tcp_keepalive_time",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2298,
+      "start_col": 5,
+      "end_line": 2298,
+      "end_col": 61
+    },
+    "deps": [
+      242,
+      260
+    ]
+  },
+  {
+    "uid": 385,
+    "path": "sys::<impl socket::Socket>::_set_cloexec",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1641,
+      "start_col": 5,
+      "end_line": 1641,
+      "end_col": 77
+    },
+    "deps": [
+      242,
+      261,
+      262
+    ]
+  },
+  {
+    "uid": 386,
+    "path": "sys::set_nonblocking",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1122,
+      "start_col": 1,
+      "end_line": 1122,
+      "end_col": 82
+    },
+    "deps": [
+      261,
+      262
+    ]
+  },
+  {
+    "uid": 387,
+    "path": "socket::Socket::nonblocking",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 372,
+      "start_col": 5,
+      "end_line": 372,
+      "end_col": 50
+    },
+    "deps": [
+      242,
+      263
+    ]
+  },
+  {
+    "uid": 388,
+    "path": "socket::Socket::leave_multicast_v4_n",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1397,
+      "start_col": 5,
+      "end_line": 1401,
+      "end_col": 24
+    },
+    "deps": [
+      242,
+      264,
+      192
+    ]
+  },
+  {
+    "uid": 389,
+    "path": "socket::Socket::join_multicast_v4_n",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1361,
+      "start_col": 5,
+      "end_line": 1365,
+      "end_col": 24
+    },
+    "deps": [
+      242,
+      264,
+      192
+    ]
+  },
+  {
+    "uid": 390,
+    "path": "sockaddr::SockAddr::as_socket_ipv6",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 352,
+      "start_col": 5,
+      "end_line": 352,
+      "end_col": 57
+    },
+    "deps": [
+      267
+    ]
+  },
+  {
+    "uid": 391,
+    "path": "sockaddr::SockAddr::as_socket_ipv4",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 343,
+      "start_col": 5,
+      "end_line": 343,
+      "end_col": 57
+    },
+    "deps": [
+      267
+    ]
+  },
+  {
+    "uid": 392,
+    "path": "socket::Socket::set_write_timeout",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1175,
+      "start_col": 5,
+      "end_line": 1175,
+      "end_col": 82
+    },
+    "deps": [
+      242,
+      269
+    ]
+  },
+  {
+    "uid": 393,
+    "path": "socket::Socket::set_read_timeout",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1104,
+      "start_col": 5,
+      "end_line": 1104,
+      "end_col": 81
+    },
+    "deps": [
+      242,
+      269
+    ]
+  },
+  {
+    "uid": 394,
+    "path": "socket::Socket::write_timeout",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1167,
+      "start_col": 5,
+      "end_line": 1167,
+      "end_col": 64
+    },
+    "deps": [
+      242,
+      270
+    ]
+  },
+  {
+    "uid": 395,
+    "path": "socket::Socket::read_timeout",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 1096,
+      "start_col": 5,
+      "end_line": 1096,
+      "end_col": 63
+    },
+    "deps": [
+      242,
+      270
+    ]
+  },
+  {
+    "uid": 396,
+    "path": "sys::recv_from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1161,
+      "start_col": 1,
+      "end_line": 1165,
+      "end_col": 35
+    },
+    "deps": [
+      278
+    ]
+  },
+  {
+    "uid": 397,
+    "path": "sys::getpeername",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1093,
+      "start_col": 1,
+      "end_line": 1093,
+      "end_col": 65
+    },
+    "deps": [
+      279
+    ]
+  },
+  {
+    "uid": 398,
+    "path": "sys::getsockname",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1087,
+      "start_col": 1,
+      "end_line": 1087,
+      "end_col": 65
+    },
+    "deps": [
+      280
+    ]
+  },
+  {
+    "uid": 399,
+    "path": "sys::accept",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1082,
+      "start_col": 1,
+      "end_line": 1082,
+      "end_col": 73
+    },
+    "deps": [
+      281
+    ]
+  },
+  {
+    "uid": 400,
+    "path": "socket::Socket::new",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 115,
+      "start_col": 5,
+      "end_line": 115,
+      "end_col": 91
+    },
+    "deps": [
+      216,
+      283
+    ]
+  },
+  {
+    "uid": 401,
+    "path": "sys::<impl sockaddr::SockAddr>::is_unnamed",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 910,
+      "start_col": 5,
+      "end_line": 910,
+      "end_col": 37
+    },
+    "deps": [
+      288
+    ]
+  },
+  {
+    "uid": 402,
+    "path": "sys::<impl sockaddr::SockAddr>::as_pathname",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 974,
+      "start_col": 5,
+      "end_line": 974,
+      "end_col": 47
+    },
+    "deps": [
+      288
+    ]
+  },
+  {
+    "uid": 403,
+    "path": "sockaddr::SockAddr::unix",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockaddr.rs",
+      "start_line": 219,
+      "start_col": 5,
+      "end_line": 221,
+      "end_col": 24
+    },
+    "deps": [
+      289
+    ]
+  },
+  {
+    "uid": 404,
+    "path": "sys::<impl std::convert::From<socket::Socket> for std::os::unix::net::UnixDatagram>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 111,
+      "start_col": 13,
+      "end_line": 111,
+      "end_col": 43
+    },
+    "deps": [
+      291
+    ]
+  },
+  {
+    "uid": 405,
+    "path": "sys::<impl std::convert::From<socket::Socket> for std::os::unix::net::UnixListener>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 111,
+      "start_col": 13,
+      "end_line": 111,
+      "end_col": 43
+    },
+    "deps": [
+      291
+    ]
+  },
+  {
+    "uid": 406,
+    "path": "sys::<impl std::convert::From<socket::Socket> for std::os::unix::net::UnixStream>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 111,
+      "start_col": 13,
+      "end_line": 111,
+      "end_col": 43
+    },
+    "deps": [
+      291
+    ]
+  },
+  {
+    "uid": 407,
+    "path": "socket::<impl std::convert::From<socket::Socket> for std::net::UdpSocket>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 111,
+      "start_col": 13,
+      "end_line": 111,
+      "end_col": 43
+    },
+    "deps": [
+      291
+    ]
+  },
+  {
+    "uid": 408,
+    "path": "socket::<impl std::convert::From<socket::Socket> for std::net::TcpListener>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 111,
+      "start_col": 13,
+      "end_line": 111,
+      "end_col": 43
+    },
+    "deps": [
+      291
+    ]
+  },
+  {
+    "uid": 409,
+    "path": "socket::<impl std::convert::From<socket::Socket> for std::net::TcpStream>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 111,
+      "start_col": 13,
+      "end_line": 111,
+      "end_col": 43
+    },
+    "deps": [
+      291
+    ]
+  },
+  {
+    "uid": 410,
+    "path": "sys::<impl std::convert::From<std::os::unix::net::UnixDatagram> for socket::Socket>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 111,
+      "start_col": 13,
+      "end_line": 111,
+      "end_col": 43
+    },
+    "deps": [
+      293
+    ]
+  },
+  {
+    "uid": 411,
+    "path": "sys::<impl std::convert::From<std::os::unix::net::UnixListener> for socket::Socket>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 111,
+      "start_col": 13,
+      "end_line": 111,
+      "end_col": 43
+    },
+    "deps": [
+      293
+    ]
+  },
+  {
+    "uid": 412,
+    "path": "sys::<impl std::convert::From<std::os::unix::net::UnixStream> for socket::Socket>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 111,
+      "start_col": 13,
+      "end_line": 111,
+      "end_col": 43
+    },
+    "deps": [
+      293
+    ]
+  },
+  {
+    "uid": 413,
+    "path": "<socket::Socket as std::convert::From<std::net::UdpSocket>>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 111,
+      "start_col": 13,
+      "end_line": 111,
+      "end_col": 43
+    },
+    "deps": [
+      293
+    ]
+  },
+  {
+    "uid": 414,
+    "path": "<socket::Socket as std::convert::From<std::net::TcpListener>>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 111,
+      "start_col": 13,
+      "end_line": 111,
+      "end_col": 43
+    },
+    "deps": [
+      293
+    ]
+  },
+  {
+    "uid": 415,
+    "path": "<socket::Socket as std::convert::From<std::net::TcpStream>>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/lib.rs",
+      "start_line": 111,
+      "start_col": 13,
+      "end_line": 111,
+      "end_col": 43
+    },
+    "deps": [
+      293
+    ]
+  },
+  {
+    "uid": 416,
+    "path": "sys::<impl std::convert::From<std::os::fd::OwnedFd> for socket::Socket>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 3117,
+      "start_col": 5,
+      "end_line": 3117,
+      "end_col": 42
+    },
+    "deps": [
+      293
+    ]
+  },
+  {
+    "uid": 417,
+    "path": "<sockref::SockRef<'s> as std::convert::From<&'s S>>::from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockref.rs",
+      "start_line": 86,
+      "start_col": 5,
+      "end_line": 86,
+      "end_col": 35
+    },
+    "deps": [
+      293
+    ]
+  },
+  {
+    "uid": 418,
+    "path": "sys::recv_from_vectored",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1203,
+      "start_col": 1,
+      "end_line": 1207,
+      "end_col": 46
+    },
+    "deps": [
+      234,
+      238,
+      25,
+      298
+    ]
+  },
+  {
+    "uid": 419,
+    "path": "socket::Socket::recv_vectored_with_flags",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 493,
+      "start_col": 5,
+      "end_line": 497,
+      "end_col": 40
+    },
+    "deps": [
+      299,
+      242
+    ]
+  },
+  {
+    "uid": 420,
+    "path": "socket::Socket::send_vectored_with_flags",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 671,
+      "start_col": 5,
+      "end_line": 675,
+      "end_col": 27
+    },
+    "deps": [
+      242,
+      300
+    ]
+  },
+  {
+    "uid": 421,
+    "path": "socket::Socket::recv",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 418,
+      "start_col": 5,
+      "end_line": 418,
+      "end_col": 73
+    },
+    "deps": [
+      301
+    ]
+  },
+  {
+    "uid": 422,
+    "path": "socket::Socket::peek",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 514,
+      "start_col": 5,
+      "end_line": 514,
+      "end_col": 73
+    },
+    "deps": [
+      301
+    ]
+  },
+  {
+    "uid": 423,
+    "path": "socket::Socket::recv_out_of_band",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 431,
+      "start_col": 5,
+      "end_line": 431,
+      "end_col": 85
+    },
+    "deps": [
+      301
+    ]
+  },
+  {
+    "uid": 424,
+    "path": "sys::<impl socket::Socket>::sendfile",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 2481,
+      "start_col": 5,
+      "end_line": 2488,
+      "end_col": 20
+    },
+    "deps": [
+      306
+    ]
+  },
+  {
+    "uid": 425,
+    "path": "sys::<impl socket::Socket>::set_nosigpipe",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1695,
+      "start_col": 5,
+      "end_line": 1695,
+      "end_col": 67
+    },
+    "deps": [
+      315
+    ]
+  },
+  {
+    "uid": 426,
+    "path": "sys::poll_connect",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1036,
+      "start_col": 1,
+      "end_line": 1036,
+      "end_col": 88
+    },
+    "deps": [
+      242,
+      316
+    ]
+  },
+  {
+    "uid": 427,
+    "path": "socket::Socket::send",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 647,
+      "start_col": 5,
+      "end_line": 647,
+      "end_col": 56
+    },
+    "deps": [
+      317
+    ]
+  },
+  {
+    "uid": 428,
+    "path": "socket::Socket::send_out_of_band",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 688,
+      "start_col": 5,
+      "end_line": 688,
+      "end_col": 68
+    },
+    "deps": [
+      317
+    ]
+  },
+  {
+    "uid": 429,
+    "path": "socket::Socket::set_tcp_keepalive",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2407,
+      "start_col": 5,
+      "end_line": 2407,
+      "end_col": 77
+    },
+    "deps": [
+      242,
+      268,
+      320
+    ]
+  },
+  {
+    "uid": 430,
+    "path": "socket::Socket::send_to_vectored_with_flags",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 727,
+      "start_col": 5,
+      "end_line": 732,
+      "end_col": 27
+    },
+    "deps": [
+      242,
+      378
+    ]
+  },
+  {
+    "uid": 431,
+    "path": "socket::Socket::send_to",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 697,
+      "start_col": 5,
+      "end_line": 697,
+      "end_col": 76
+    },
+    "deps": [
+      379
+    ]
+  },
+  {
+    "uid": 432,
+    "path": "sys::<impl socket::Socket>::set_cloexec",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1636,
+      "start_col": 5,
+      "end_line": 1636,
+      "end_col": 69
+    },
+    "deps": [
+      385
+    ]
+  },
+  {
+    "uid": 433,
+    "path": "socket::set_common_accept_flags",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 823,
+      "start_col": 1,
+      "end_line": 823,
+      "end_col": 65
+    },
+    "deps": [
+      385
+    ]
+  },
+  {
+    "uid": 434,
+    "path": "socket::set_common_flags",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 773,
+      "start_col": 1,
+      "end_line": 773,
+      "end_col": 58
+    },
+    "deps": [
+      315,
+      385
+    ]
+  },
+  {
+    "uid": 435,
+    "path": "socket::Socket::set_nonblocking",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 384,
+      "start_col": 5,
+      "end_line": 384,
+      "end_col": 71
+    },
+    "deps": [
+      242,
+      386
+    ]
+  },
+  {
+    "uid": 436,
+    "path": "sys::peek_sender",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 1182,
+      "start_col": 1,
+      "end_line": 1182,
+      "end_col": 65
+    },
+    "deps": [
+      396
+    ]
+  },
+  {
+    "uid": 437,
+    "path": "socket::Socket::recv_from_with_flags",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 536,
+      "start_col": 5,
+      "end_line": 540,
+      "end_col": 39
+    },
+    "deps": [
+      242,
+      396
+    ]
+  },
+  {
+    "uid": 438,
+    "path": "socket::Socket::peer_addr",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 332,
+      "start_col": 5,
+      "end_line": 332,
+      "end_col": 52
+    },
+    "deps": [
+      242,
+      397
+    ]
+  },
+  {
+    "uid": 439,
+    "path": "socket::Socket::local_addr",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 317,
+      "start_col": 5,
+      "end_line": 317,
+      "end_col": 53
+    },
+    "deps": [
+      242,
+      398
+    ]
+  },
+  {
+    "uid": 440,
+    "path": "socket::Socket::accept_raw",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 301,
+      "start_col": 5,
+      "end_line": 301,
+      "end_col": 63
+    },
+    "deps": [
+      242,
+      399
+    ]
+  },
+  {
+    "uid": 441,
+    "path": "sys::<impl sockaddr::SockAddr>::path_len",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 938,
+      "start_col": 5,
+      "end_line": 938,
+      "end_col": 61
+    },
+    "deps": [
+      39,
+      141,
+      401
+    ]
+  },
+  {
+    "uid": 442,
+    "path": "sys::<impl sockaddr::SockAddr>::as_unix",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 965,
+      "start_col": 5,
+      "end_line": 965,
+      "end_col": 68
+    },
+    "deps": [
+      402
+    ]
+  },
+  {
+    "uid": 443,
+    "path": "socket::Socket::recv_from_vectored_with_flags",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 577,
+      "start_col": 5,
+      "end_line": 581,
+      "end_col": 50
+    },
+    "deps": [
+      242,
+      418
+    ]
+  },
+  {
+    "uid": 444,
+    "path": "socket::Socket::recv_vectored",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 474,
+      "start_col": 5,
+      "end_line": 477,
+      "end_col": 40
+    },
+    "deps": [
+      419
+    ]
+  },
+  {
+    "uid": 445,
+    "path": "socket::Socket::send_vectored",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 661,
+      "start_col": 5,
+      "end_line": 661,
+      "end_col": 75
+    },
+    "deps": [
+      420
+    ]
+  },
+  {
+    "uid": 446,
+    "path": "<&'a socket::Socket as std::io::Read>::read",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2474,
+      "start_col": 5,
+      "end_line": 2474,
+      "end_col": 60
+    },
+    "deps": [
+      421
+    ]
+  },
+  {
+    "uid": 447,
+    "path": "<socket::Socket as std::io::Read>::read",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2453,
+      "start_col": 5,
+      "end_line": 2453,
+      "end_col": 60
+    },
+    "deps": [
+      421
+    ]
+  },
+  {
+    "uid": 448,
+    "path": "<&'a socket::Socket as std::io::Write>::write",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2505,
+      "start_col": 5,
+      "end_line": 2505,
+      "end_col": 57
+    },
+    "deps": [
+      427
+    ]
+  },
+  {
+    "uid": 449,
+    "path": "<socket::Socket as std::io::Write>::write",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2490,
+      "start_col": 5,
+      "end_line": 2490,
+      "end_col": 57
+    },
+    "deps": [
+      427
+    ]
+  },
+  {
+    "uid": 450,
+    "path": "socket::Socket::send_to_vectored",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 718,
+      "start_col": 5,
+      "end_line": 718,
+      "end_col": 95
+    },
+    "deps": [
+      430
+    ]
+  },
+  {
+    "uid": 451,
+    "path": "socket::Socket::pair",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 137,
+      "start_col": 5,
+      "end_line": 141,
+      "end_col": 38
+    },
+    "deps": [
+      434,
+      216,
+      282
+    ]
+  },
+  {
+    "uid": 452,
+    "path": "socket::Socket::connect_timeout",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 215,
+      "start_col": 5,
+      "end_line": 215,
+      "end_col": 88
+    },
+    "deps": [
+      426,
+      435,
+      380
+    ]
+  },
+  {
+    "uid": 453,
+    "path": "socket::Socket::peek_sender",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 624,
+      "start_col": 5,
+      "end_line": 624,
+      "end_col": 54
+    },
+    "deps": [
+      242,
+      436
+    ]
+  },
+  {
+    "uid": 454,
+    "path": "socket::Socket::peek_from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 614,
+      "start_col": 5,
+      "end_line": 614,
+      "end_col": 90
+    },
+    "deps": [
+      437
+    ]
+  },
+  {
+    "uid": 455,
+    "path": "socket::Socket::recv_from",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 528,
+      "start_col": 5,
+      "end_line": 528,
+      "end_col": 90
+    },
+    "deps": [
+      437
+    ]
+  },
+  {
+    "uid": 456,
+    "path": "<sockref::SockRef<'_> as std::fmt::Debug>::fmt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sockref.rs",
+      "start_line": 114,
+      "start_col": 5,
+      "end_line": 114,
+      "end_col": 61
+    },
+    "deps": [
+      242,
+      438,
+      439
+    ]
+  },
+  {
+    "uid": 457,
+    "path": "<socket::Socket as std::fmt::Debug>::fmt",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2520,
+      "start_col": 5,
+      "end_line": 2520,
+      "end_col": 61
+    },
+    "deps": [
+      242,
+      438,
+      439
+    ]
+  },
+  {
+    "uid": 458,
+    "path": "socket::Socket::accept",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 259,
+      "start_col": 5,
+      "end_line": 259,
+      "end_col": 59
+    },
+    "deps": [
+      433,
+      440
+    ]
+  },
+  {
+    "uid": 459,
+    "path": "sys::<impl sockaddr::SockAddr>::path_bytes",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 946,
+      "start_col": 5,
+      "end_line": 946,
+      "end_col": 84
+    },
+    "deps": [
+      441,
+      401
+    ]
+  },
+  {
+    "uid": 460,
+    "path": "socket::Socket::recv_from_vectored",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 558,
+      "start_col": 5,
+      "end_line": 561,
+      "end_col": 50
+    },
+    "deps": [
+      443
+    ]
+  },
+  {
+    "uid": 461,
+    "path": "<&'a socket::Socket as std::io::Read>::read_vectored",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2482,
+      "start_col": 5,
+      "end_line": 2482,
+      "end_col": 82
+    },
+    "deps": [
+      444
+    ]
+  },
+  {
+    "uid": 462,
+    "path": "<socket::Socket as std::io::Read>::read_vectored",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2462,
+      "start_col": 5,
+      "end_line": 2462,
+      "end_col": 82
+    },
+    "deps": [
+      444
+    ]
+  },
+  {
+    "uid": 463,
+    "path": "<&'a socket::Socket as std::io::Write>::write_vectored",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2510,
+      "start_col": 5,
+      "end_line": 2510,
+      "end_col": 76
+    },
+    "deps": [
+      445
+    ]
+  },
+  {
+    "uid": 464,
+    "path": "<socket::Socket as std::io::Write>::write_vectored",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/socket.rs",
+      "start_line": 2495,
+      "start_col": 5,
+      "end_line": 2495,
+      "end_col": 76
+    },
+    "deps": [
+      445
+    ]
+  },
+  {
+    "uid": 465,
+    "path": "sys::<impl sockaddr::SockAddr>::as_pathname::{closure#0}::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 976,
+      "start_col": 90,
+      "end_line": 976,
+      "end_col": 92
+    },
+    "deps": [
+      459
+    ]
+  },
+  {
+    "uid": 466,
+    "path": "sys::<impl sockaddr::SockAddr>::as_pathname::{closure#0}::{closure#0}",
+    "span": {
+      "file": "/Users/kristofergaudel/Desktop/Code/centrifuge/crates/socket2/src/sys/unix.rs",
+      "start_line": 976,
+      "start_col": 90,
+      "end_line": 976,
+      "end_col": 92
+    },
+    "deps": [
+      459
+    ]
+  }
+]

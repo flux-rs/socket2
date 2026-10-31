@@ -1179,6 +1179,7 @@ pub(crate) fn recv_from(
     }
 }
 
+#[flux_rs::trusted(reason = "panicked at crates/flux-middle/src/rty/expr.rs:606:17")]
 pub(crate) fn peek_sender(fd: RawSocket) -> io::Result<SockAddr> {
     // Unix-like platforms simply truncate the returned data, so this implementation is trivial.
     // However, for Windows this requires suppressing the `WSAEMSGSIZE` error,
