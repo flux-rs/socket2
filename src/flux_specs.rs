@@ -78,12 +78,12 @@ mod ffi {
     // kernel promises: it is assumed, not checked.
 
     #[flux_rs::extern_spec(libc)]
-    #[flux_rs::spec(fn(libc::c_int, buf: *mut[@p] c_void, len: usize, libc::c_int) -> isize{v: v <= len}
+    #[flux_rs::spec(fn(libc::c_int, buf: *mut[@p] c_void, len: usize, libc::c_int) -> isize{v: -1 <= v && v <= len}
                     requires crate::flux_specs::readable(p, len))]
     unsafe fn recv(socket: libc::c_int, buf: *mut c_void, len: libc::size_t, flags: libc::c_int) -> libc::ssize_t;
 
     #[flux_rs::extern_spec(libc)]
-    #[flux_rs::spec(fn(libc::c_int, buf: *const[@p] c_void, len: usize, libc::c_int) -> isize{v: v <= len}
+    #[flux_rs::spec(fn(libc::c_int, buf: *const[@p] c_void, len: usize, libc::c_int) -> isize{v: -1 <= v && v <= len}
                     requires crate::flux_specs::readable(p, len))]
     unsafe fn send(socket: libc::c_int, buf: *const c_void, len: libc::size_t, flags: libc::c_int) -> libc::ssize_t;
 

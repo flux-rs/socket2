@@ -260,19 +260,25 @@ impl<'a> MaybeUninitSlice<'a> {
 // Used in `MsgHdr`.
 pub(crate) use windows_sys::Win32::Networking::WinSock::WSAMSG as msghdr;
 
+#[flux_rs::spec(fn(&mut msghdr, name: *mut[@p] SockAddrStorage, name_len: i32{0 <= name_len && crate::flux_specs::readable(p, name_len)}))]
 pub(crate) fn set_msghdr_name(msg: &mut msghdr, name: *mut SockAddrStorage, name_len: socklen_t) {
     msg.name = name as *mut _;
     msg.namelen = name_len;
 }
 
+#[flux_rs::spec(fn(&mut msghdr, ptr: *mut[@p] WSABUF, len: usize{crate::flux_specs::readable(p, len * <WSABUF as Sized>::size_of())}))]
 pub(crate) fn set_msghdr_iov(msg: &mut msghdr, ptr: *mut WSABUF, len: usize) {
     msg.lpBuffers = ptr;
     msg.dwBufferCount = min(len, u32::MAX as usize) as u32;
 }
 
+#[flux_rs::spec(fn(&mut msghdr, ptr: *mut[@p] u8, len: usize{crate::flux_specs::readable(p, len)}))]
 pub(crate) fn set_msghdr_control(msg: &mut msghdr, ptr: *mut u8, len: usize) {
-    msg.Control.buf = ptr;
-    msg.Control.len = len as u32;
+    // CENTRIFUGE: together, as flux refines `WSABUF`.
+    msg.Control = WSABUF {
+        len: len as u32,
+        buf: ptr,
+    };
 }
 
 pub(crate) fn set_msghdr_flags(msg: &mut msghdr, flags: c_int) {

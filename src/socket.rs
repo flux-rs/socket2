@@ -415,6 +415,7 @@ impl Socket {
     /// Note that the [`io::Read::read`] implementation calls this function with
     /// a `buf`fer of type `&mut [u8]`, allowing initialised buffers to be used
     /// without using `unsafe`.
+    #[cfg_attr(unix, flux_rs::spec(fn(&Socket, &mut [MaybeUninit<u8>][@n]) -> Result<usize{v: v <= n}, io::Error>))]
     pub fn recv(&self, buf: &mut [MaybeUninit<u8>]) -> io::Result<usize> {
         self.recv_with_flags(buf, 0)
     }
@@ -436,6 +437,7 @@ impl Socket {
     /// the underlying `recv` call.
     ///
     /// [`recv`]: Socket::recv
+    #[cfg_attr(unix, flux_rs::spec(fn(&Socket, &mut [MaybeUninit<u8>][@n], sys::c_int) -> Result<usize{v: v <= n}, io::Error>))]
     pub fn recv_with_flags(
         &self,
         buf: &mut [MaybeUninit<u8>],
@@ -644,6 +646,7 @@ impl Socket {
     ///
     /// On success returns the number of bytes that were sent.
     #[doc = man_links!(send(2))]
+    #[cfg_attr(unix, flux_rs::spec(fn(&Socket, &[u8][@n]) -> Result<usize{v: v <= n}, io::Error>))]
     pub fn send(&self, buf: &[u8]) -> io::Result<usize> {
         self.send_with_flags(buf, 0)
     }
@@ -652,6 +655,7 @@ impl Socket {
     /// `send` call.
     ///
     /// [`send`]: Socket::send
+    #[cfg_attr(unix, flux_rs::spec(fn(&Socket, &[u8][@n], c_int) -> Result<usize{v: v <= n}, io::Error>))]
     pub fn send_with_flags(&self, buf: &[u8], flags: c_int) -> io::Result<usize> {
         sys::send(self.as_raw(), buf, flags)
     }

@@ -1205,6 +1205,7 @@ pub(crate) fn shutdown(fd: RawSocket, how: Shutdown) -> io::Result<()> {
     syscall!(shutdown(fd, how)).map(|_| ())
 }
 
+#[flux_rs::spec(fn(RawSocket, &mut [MaybeUninit<u8>][@n], c_int) -> Result<usize{v: v <= n}, io::Error>)]
 pub(crate) fn recv(fd: RawSocket, buf: &mut [MaybeUninit<u8>], flags: c_int) -> io::Result<usize> {
     syscall!(recv(
         fd,
@@ -1288,6 +1289,7 @@ pub(crate) fn recvmsg(
     syscall!(recvmsg(fd, &mut msg.inner, flags)).map(|n| n as usize)
 }
 
+#[flux_rs::spec(fn(RawSocket, &[u8][@n], c_int) -> Result<usize{v: v <= n}, io::Error>)]
 pub(crate) fn send(fd: RawSocket, buf: &[u8], flags: c_int) -> io::Result<usize> {
     syscall!(send(
         fd,
