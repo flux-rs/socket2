@@ -198,6 +198,8 @@ impl SockAddr {
     /// # Ok(())
     /// # }
     /// ```
+    #[flux_rs::spec(fn(init: F) -> io::Result<(T, SockAddr)>
+                    where F: FnOnce(*mut{p: crate::flux_specs::covers_storage(p)} SockAddrStorage, *mut u32) -> Result<T, io::Error>)]
     pub unsafe fn try_init<F, T>(init: F) -> io::Result<(T, SockAddr)>
     where
         F: FnOnce(*mut SockAddrStorage, *mut socklen_t) -> io::Result<T>,
@@ -385,8 +387,8 @@ impl From<SocketAddr> for SockAddr {
 
 impl From<SocketAddrV4> for SockAddr {
     fn from(addr: SocketAddrV4) -> SockAddr {
-        // SAFETY: a `sockaddr_storage` of all zeros is valid.
-        let mut storage = unsafe { mem::zeroed::<sockaddr_storage>() };
+        // CENTRIFUGE: `SockAddrStorage::zeroed`, not `mem::zeroed`, see log/NOTES.md.
+        let mut storage = SockAddrStorage::zeroed().storage;
         let len = {
             let storage = unsafe { &mut *ptr::addr_of_mut!(storage).cast::<sockaddr_in>() };
             storage.sin_family = AF_INET as sa_family_t;
@@ -422,8 +424,8 @@ impl From<SocketAddrV4> for SockAddr {
 
 impl From<SocketAddrV6> for SockAddr {
     fn from(addr: SocketAddrV6) -> SockAddr {
-        // SAFETY: a `sockaddr_storage` of all zeros is valid.
-        let mut storage = unsafe { mem::zeroed::<sockaddr_storage>() };
+        // CENTRIFUGE: `SockAddrStorage::zeroed`, not `mem::zeroed`, see log/NOTES.md.
+        let mut storage = SockAddrStorage::zeroed().storage;
         let len = {
             let storage = unsafe { &mut *ptr::addr_of_mut!(storage).cast::<sockaddr_in6>() };
             storage.sin6_family = AF_INET6 as sa_family_t;

@@ -82,3 +82,63 @@ unsafe fn bind(socket: libc::c_int, address: *const libc::sockaddr, address_len:
 #[flux_rs::spec(fn(libc::c_int, *const[@a] libc::sockaddr, l: u32) -> libc::c_int
                 requires readable(a, l))]
 unsafe fn connect(socket: libc::c_int, address: *const libc::sockaddr, len: libc::socklen_t) -> libc::c_int;
+
+#[flux_rs::extern_spec(libc)]
+#[flux_rs::spec(fn(libc::c_int, buf: *mut[@p] c_void, len: usize, libc::c_int, *mut[@a] libc::sockaddr, *mut u32) -> isize{v: v <= len}
+                requires readable(p, len) && readable(a, storage_size()))]
+unsafe fn recvfrom(
+    socket: libc::c_int,
+    buf: *mut c_void,
+    len: libc::size_t,
+    flags: libc::c_int,
+    addr: *mut libc::sockaddr,
+    addrlen: *mut libc::socklen_t,
+) -> libc::ssize_t;
+
+#[flux_rs::extern_spec(libc)]
+#[flux_rs::spec(fn(libc::c_int, buf: *const[@p] c_void, len: usize, libc::c_int, *const[@a] libc::sockaddr, l: u32) -> isize{v: v <= len}
+                requires readable(p, len) && readable(a, l))]
+unsafe fn sendto(
+    socket: libc::c_int,
+    buf: *const c_void,
+    len: libc::size_t,
+    flags: libc::c_int,
+    addr: *const libc::sockaddr,
+    addrlen: libc::socklen_t,
+) -> libc::ssize_t;
+
+#[flux_rs::extern_spec(libc)]
+#[flux_rs::spec(fn(libc::c_int, *mut[@a] libc::sockaddr, *mut u32) -> libc::c_int
+                requires readable(a, storage_size()))]
+unsafe fn accept(socket: libc::c_int, address: *mut libc::sockaddr, address_len: *mut libc::socklen_t) -> libc::c_int;
+
+#[flux_rs::extern_spec(libc)]
+#[flux_rs::spec(fn(libc::c_int, *mut[@a] libc::sockaddr, *mut u32) -> libc::c_int
+                requires readable(a, storage_size()))]
+unsafe fn getsockname(socket: libc::c_int, address: *mut libc::sockaddr, address_len: *mut libc::socklen_t) -> libc::c_int;
+
+#[flux_rs::extern_spec(libc)]
+#[flux_rs::spec(fn(libc::c_int, *mut[@a] libc::sockaddr, *mut u32) -> libc::c_int
+                requires readable(a, storage_size()))]
+unsafe fn getpeername(socket: libc::c_int, address: *mut libc::sockaddr, address_len: *mut libc::socklen_t) -> libc::c_int;
+
+#[flux_rs::extern_spec(libc)]
+#[flux_rs::spec(fn(libc::c_int, libc::c_int, libc::c_int, *const[@p] c_void, l: u32) -> libc::c_int
+                requires readable(p, l))]
+unsafe fn setsockopt(
+    socket: libc::c_int,
+    level: libc::c_int,
+    name: libc::c_int,
+    value: *const c_void,
+    option_len: libc::socklen_t,
+) -> libc::c_int;
+
+#[flux_rs::extern_spec(libc)]
+#[flux_rs::spec(fn(libc::c_int, libc::c_int, libc::c_int, *mut[@p] libc::c_int) -> libc::c_int
+                requires readable(p, 2 * <libc::c_int as Sized>::size_of()))]
+unsafe fn socketpair(
+    domain: libc::c_int,
+    type_: libc::c_int,
+    protocol: libc::c_int,
+    socket_vector: *mut libc::c_int,
+) -> libc::c_int;

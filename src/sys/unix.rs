@@ -745,13 +745,33 @@ pub(crate) fn offset_of_path(storage: &libc::sockaddr_un) -> usize {
     path - base
 }
 
+// CENTRIFUGE: `unix_sockaddr`'s copy, split out so the rest of it stays checked.
+#[cfg(not(target_os = "wasi"))]
+#[flux_rs::trusted(reason = "ABORT: `nonoverlapping` of a slice and a `&mut` (ABORT.md §2)")]
+#[flux_rs::spec(fn(bytes: &[u8][@n], sun_path: &mut [libc::c_char][@m]) requires n <= m)]
+fn copy_path(bytes: &[u8], sun_path: &mut [libc::c_char]) {
+    // SAFETY: `bytes` and `addr.sun_path` are not overlapping and
+    // both point to valid memory.
+    // `storage` was initialized to zero above, so the path is
+    // already NULL terminated.
+    unsafe {
+        ptr::copy_nonoverlapping(bytes.as_ptr(), sun_path.as_mut_ptr().cast(), bytes.len());
+    }
+}
+
+// CENTRIFUGE: `view_as` without its generic result, see log/NOTES.md.
+#[cfg(not(target_os = "wasi"))]
+fn view_as_un(storage: &mut SockAddrStorage) -> &mut libc::sockaddr_un {
+    // SAFETY: sockaddr_un is one of the sockaddr_* types defined by this platform.
+    unsafe { storage.view_as::<libc::sockaddr_un>() }
+}
+
 #[cfg(not(target_os = "wasi"))]
 #[allow(unsafe_op_in_unsafe_fn)]
 pub(crate) fn unix_sockaddr(path: &Path) -> io::Result<SockAddr> {
     let mut storage = SockAddrStorage::zeroed();
     let len = {
-        // SAFETY: sockaddr_un is one of the sockaddr_* types defined by this platform.
-        let storage = unsafe { storage.view_as::<libc::sockaddr_un>() };
+        let storage = view_as_un(&mut storage);
 
         let bytes = path.as_os_str().as_bytes();
         let too_long = match bytes.first() {
@@ -768,17 +788,7 @@ pub(crate) fn unix_sockaddr(path: &Path) -> io::Result<SockAddr> {
         }
 
         storage.sun_family = libc::AF_UNIX as sa_family_t;
-        // SAFETY: `bytes` and `addr.sun_path` are not overlapping and
-        // both point to valid memory.
-        // `storage` was initialized to zero above, so the path is
-        // already NULL terminated.
-        unsafe {
-            ptr::copy_nonoverlapping(
-                bytes.as_ptr(),
-                storage.sun_path.as_mut_ptr().cast(),
-                bytes.len(),
-            );
-        }
+        copy_path(bytes, &mut storage.sun_path);
 
         let sun_path_offset = offset_of_path(storage);
         sun_path_offset
@@ -975,6 +985,7 @@ impl SockAddr {
 
     /// Returns this address as Unix `SocketAddr` if it is an `AF_UNIX` pathname
     /// address, otherwise returns `None`.
+    #[flux_rs::trusted(reason = "BUG: `unwrap` panics on a path with an interior null (BUGS.md bug 1)")]
     pub fn as_unix(&self) -> Option<std::os::unix::net::SocketAddr> {
         let path = self.as_pathname()?;
         // SAFETY: we can represent this as a valid pathname, then so can the
@@ -984,6 +995,7 @@ impl SockAddr {
 
     /// Returns this address as a `Path` reference if it is an `AF_UNIX`
     /// pathname address, otherwise returns `None`.
+    #[flux_rs::trusted(reason = "ABORT: `len` can't be tied to the family, nor the `then` guard to its closure (ABORT.md §3)")]
     pub fn as_pathname(&self) -> Option<&Path> {
         self.as_sockaddr_un().and_then(|storage| {
             (self.len() > offset_of_path(storage) as _ && storage.sun_path[0] != 0).then(|| {
@@ -1447,6 +1459,7 @@ fn fcntl_remove(fd: RawSocket, get_cmd: c_int, set_cmd: c_int, flag: c_int) -> i
 }
 
 /// Caller must ensure `T` is the correct type for `opt` and `val`.
+#[flux_rs::trusted(reason = "ABORT: `size_of` in a `Result::map` closure reported as panicking, flux false positive (ABORT.md §4)")]
 pub(crate) unsafe fn getsockopt<T>(fd: RawSocket, opt: c_int, val: c_int) -> io::Result<T> {
     let mut payload: MaybeUninit<T> = MaybeUninit::uninit();
     let mut len = size_of::<T>() as libc::socklen_t;
@@ -1465,6 +1478,8 @@ pub(crate) unsafe fn getsockopt<T>(fd: RawSocket, opt: c_int, val: c_int) -> io:
 }
 
 /// Caller must ensure `T` is the correct type for `opt` and `val`.
+#[flux_rs::spec(fn(RawSocket, c_int, c_int, T) -> io::Result<()>
+                requires T::size_of() <= 4294967295)]
 pub(crate) unsafe fn setsockopt<T>(
     fd: RawSocket,
     opt: c_int,
