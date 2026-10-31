@@ -61,7 +61,6 @@ struct iovec {
 // Sockets API, per POSIX.1-2024 (`sys/socket.h`). Each spec states the buffer the
 // call reads or writes. The bound on what `recv` and friends return is what the
 // kernel promises: it is assumed, not checked.
-use core::ffi::c_void;
 
 #[flux_rs::extern_spec(libc)]
 #[flux_rs::spec(fn(libc::c_int, buf: *mut[@p] c_void, len: usize, libc::c_int) -> isize{v: v <= len}

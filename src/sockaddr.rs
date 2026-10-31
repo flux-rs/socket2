@@ -86,6 +86,24 @@ impl std::fmt::Debug for SockAddrStorage {
     }
 }
 
+// CENTRIFUGE: these are the crate's `cast` and dereference with the generic result
+// gone: flux assumes `false` after such a value is bound, see log/NOTES.md.
+fn view_in(storage: &sockaddr_storage) -> &sockaddr_in {
+    unsafe { &*(ptr::addr_of!(*storage).cast::<sockaddr_in>()) }
+}
+
+fn view_in6(storage: &sockaddr_storage) -> &sockaddr_in6 {
+    unsafe { &*(ptr::addr_of!(*storage).cast::<sockaddr_in6>()) }
+}
+
+fn view_in_mut(storage: &mut sockaddr_storage) -> &mut sockaddr_in {
+    unsafe { &mut *ptr::addr_of_mut!(*storage).cast::<sockaddr_in>() }
+}
+
+fn view_in6_mut(storage: &mut sockaddr_storage) -> &mut sockaddr_in6 {
+    unsafe { &mut *ptr::addr_of_mut!(*storage).cast::<sockaddr_in6>() }
+}
+
 /// The address of a socket.
 ///
 /// `SockAddr`s may be constructed directly to and from the standard library
@@ -323,14 +341,14 @@ impl SockAddr {
         if self.storage.ss_family == AF_INET as sa_family_t {
             // SAFETY: if the `ss_family` field is `AF_INET` then storage must
             // be a `sockaddr_in`.
-            let addr = unsafe { &*(ptr::addr_of!(self.storage).cast::<sockaddr_in>()) };
+            let addr = view_in(&self.storage);
             let ip = crate::sys::from_in_addr(addr.sin_addr);
             let port = u16::from_be(addr.sin_port);
             Some(SocketAddr::V4(SocketAddrV4::new(ip, port)))
         } else if self.storage.ss_family == AF_INET6 as sa_family_t {
             // SAFETY: if the `ss_family` field is `AF_INET6` then storage must
             // be a `sockaddr_in6`.
-            let addr = unsafe { &*(ptr::addr_of!(self.storage).cast::<sockaddr_in6>()) };
+            let addr = view_in6(&self.storage);
             let ip = crate::sys::from_in6_addr(addr.sin6_addr);
             let port = u16::from_be(addr.sin6_port);
             Some(SocketAddr::V6(SocketAddrV6::new(
@@ -390,7 +408,7 @@ impl From<SocketAddrV4> for SockAddr {
         // CENTRIFUGE: `SockAddrStorage::zeroed`, not `mem::zeroed`, see log/NOTES.md.
         let mut storage = SockAddrStorage::zeroed().storage;
         let len = {
-            let storage = unsafe { &mut *ptr::addr_of_mut!(storage).cast::<sockaddr_in>() };
+            let storage = view_in_mut(&mut storage);
             storage.sin_family = AF_INET as sa_family_t;
             storage.sin_port = addr.port().to_be();
             storage.sin_addr = crate::sys::to_in_addr(addr.ip());
@@ -427,7 +445,7 @@ impl From<SocketAddrV6> for SockAddr {
         // CENTRIFUGE: `SockAddrStorage::zeroed`, not `mem::zeroed`, see log/NOTES.md.
         let mut storage = SockAddrStorage::zeroed().storage;
         let len = {
-            let storage = unsafe { &mut *ptr::addr_of_mut!(storage).cast::<sockaddr_in6>() };
+            let storage = view_in6_mut(&mut storage);
             storage.sin6_family = AF_INET6 as sa_family_t;
             storage.sin6_port = addr.port().to_be();
             storage.sin6_addr = crate::sys::to_in6_addr(addr.ip());
